@@ -1,0 +1,1931 @@
+[
+    {
+        "title": "Favorite",
+        "content": [
+            {
+                "tag_line": "Favorite",
+                "details": [
+                    {
+                        "name":"Alexa, help.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },{
+        "title": "Basic",
+        "content": [
+            {
+                "tag_line": "Basic",
+                "details": [
+                    {
+                        "name":"Alexa, help.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what can I say ?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, let's chat.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn wifi On",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, pair bluetooth",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn wifi Off",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn down the volume.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, volume up",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, volume down",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, mute",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, unmute.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set volume to 20",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, shut up.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn up the volume",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, louder",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, lower",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, stop",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, connect",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Calls & SMS",
+        "content": [
+            {
+                "tag_line": "Calls & Messages",
+                "details": [
+                    {
+                        "name":"Alexa, call [name]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, answer",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, call [number]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me about 914-777-0000",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, message [name]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open phone number check",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, answer the call",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, send an SMS",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, send [name] a message",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, drop in on [room/location]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, hang up",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, drop in on [name].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, end the call",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn video off.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play messages",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, send an SMS to [contact name]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, announce [eg. its time to go]",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Music",
+        "content": [
+            {
+                "tag_line": "Musica",
+                "details": [
+                    {
+                        "name":"Alexa, play",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play despacito",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Who sings the song [title]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, next.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, restart.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play the song of the day",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, repeat",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [genre of music]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [music artist]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, start my free trial of Amazon Music Unlimited.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"What year did [band] release [song or album]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find [song or album] by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, start my free trial of Amazon Music Unlimited.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up every day at 7 am to music",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play some music.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's popular from [artist]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [artist] in the living room",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [artist] everywhere.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up to [playlist or album] at 7am",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up to [genre] at 9am",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up to [artist] at 12am",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up to [song] at 10pm",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play music by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play the latest Emily Brothers album",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play baby-making music",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play rock music for working.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play the song of the day.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [playlist] on Spotify.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [artist] station on Pandora.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [radio station] on TuneIn.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play [title] on Audible,",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, read [title]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, sample songs by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play eagles",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, previous chapter.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, read me my Kindle book.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa set a sleep timer for 15 minutes",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, stop playing in 20 minutes.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's playing?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, stop in the Office",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, next in the Bedroom.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add this song.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, create a new playlist,",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, create a ‘weekend summer' playlist.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add this song to my favorite playlist,",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add this to my playlist.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Weather",
+        "content": [
+            {
+                "tag_line": "title",
+                "details": [
+                    {
+                        "name":"Alexa, what's the weather like?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the temperature outside?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, will it rain today?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, weather on Sunday",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the weather tomorrow?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, will I need an umbrella today?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, weather in London this week?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, weather in New York",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's the weather going to be like this weekend?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the wind speed?",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "News",
+        "content": [
+            {
+                "tag_line": "News",
+                "details": [
+                    {
+                        "name":"Alexa, news",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's my Flash Briefing?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s up?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s new?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's in the news?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Give me the news",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Donation",
+        "content": [
+            {
+                "tag_line": "Make a donation",
+                "details": [
+                    {
+                        "name":"Alexa, make a donation",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, donate $20 to the American Cancer Society",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, donate to (charity or organization)",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Search",
+        "content": [
+            {
+                "tag_line": "Search",
+                "details": [
+                    {
+                        "name":"Alexa, how old is [person]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how far away is the moon?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where is [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how cold is the moon?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many people live in [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Wikipedia: [subject].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how far is [planet] in light years?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how tall is [person or object’s name]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find the address for [PizzaHut].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how long is the flight from [place] to [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when’s the next blue moon?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the population of the [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the distance between [place and [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who is the richest person in the world?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many teeth do sharks have?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, google: [subject].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the capital of [country]",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how far away is the moon?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, why is the sky blue?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what are the laws of robotics?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, bing: [subject].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me more.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find business hours for [store]",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Funny",
+        "content": [
+            {
+                "tag_line": "Funny",
+                "details": [
+                    
+                    {
+                        "name":"Alexa, rap for me.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a Star Wars fact.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the Jedi code?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a Star Wars quote.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, it’s a trap!",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, use the force.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, am I awesome?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the Sith code?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, fart! Alexa, who’s your celebrity crush?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, that’s no moon.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, do you know Hal?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I’m home.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I am your father.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, testing 1-2-3.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the best Star Wars movie?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what happens if you cross the streams?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, speak like Yoda.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, aren’t you a little short for a stormtrooper?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, why do birds suddenly appear?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what do you want to be when you grow up?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many roads must a man walk down?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what does WTF stand for?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, sing me a song.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where have all the flowers gone?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I fart in your general direction.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn down for what. Alexa, who shot the sheriff?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, why are there so many songs about rainbows?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s cooler than being cool?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I have a cold.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, have you ever seen the rain?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how are babies made?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me [Nextic] joke.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is love? Alexa, who is the real slim shady?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, you can be my wingman.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, give me an Easter egg.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is your cunning plan?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, good morning. Alexa, good night.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, thanks! Alexa, tell me a joke.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, self-destruct. Alexa, I have a bad feeling about this.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, drumroll please.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, knock knock.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Buzz Lightyear. Alexa, Hasta La Vista, Baby.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, don’t mention the war.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, curse at me.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, will you marry me?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, can you pass the Turing test?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set phasers to kill.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a [Nextic] limerick.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a limerick.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Up Up, Down Down, Left Right",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, my name is Inigo Montoya.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, life is like a box of chocolates…",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, more cowbell.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a riddle.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s the first (or second) rule of Fight Club?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, beam me up.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me the money.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how old are you?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, no more rhymes, I mean it!",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, this is a dead parrot.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when is your birthday?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa. Tea. Earl Grey. Hot.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, party on, Wayne.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, read me a haiku.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open the pod bay doors.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, are you SkyNet?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is your quest? Alexa, nice to see you",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where’s waldo?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, party time!",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when am I going to die?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who loves ya baby?,",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, surely you can’t be serious.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I want the truth.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Alarms & Timers",
+        "content": [
+            {
+                "tag_line": "Alarms & Timers",
+                "details": [
+                    {
+                        "name":"Alexa, what’s the time",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a sleep timer for 2 hours",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, my timers",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a [second] timer for [10 minutes].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when’s my next alarm?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a timer for 15 minutes",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up at 8 in the morning",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, cancel the [15 minute timer].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what are my timers?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when it’s [9 p.m] in [London], what time is it in [Tokyo]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set an alarm for 7 a.m.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a repeating alarm for weekdays at 6 a.m",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what time is it?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a [soup] timer for 30 minutes",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how much time is left on the [pizza] timer?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, cancel the [soup] timer.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how long is left on timer",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s the date?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when is [Aid Alfitr] this year?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, snooze.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s the date",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, snooze for 10 minutes",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, wake me up at 8 a.m to jaz music",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, cancel my alarm for 6 a.m",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Calendar",
+        "content": [
+            {
+                "tag_line": "calendar and date for alexa",
+                "details": [
+                    {
+                        "name":"Alexa, what’s on my calendar?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s on the calendar [this weekend].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how does my day look?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many years has it been since [1921]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add [event] to my calendar for [day] at [time].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many days until [date]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when is the first day of [season]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what time will the sun rise on [date]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when does daylight savings time start?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when is [Aid Alfitr] this year?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is my next appointment?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when is the next full moon?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s on the schedule?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add an event to my calendar.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many days until [Black Friday]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, create a new appointment.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Entertainment",
+        "content": [
+            {
+                "tag_line": "Entertainment movied radio and tv",
+                "details": [
+                    {
+                        "name":"Alexa, what movies are playing?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many Oscars has [actor] won?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, give me a [title] quote.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open Amazon Story Time",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me about the movie, [title].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is your favourite movie?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find [title]. Alexa, find [genre].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, give me a riddle",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what action movies are playing today",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me about the movie [title].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me a nearby pizza restaurant.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when do Manchester United play next?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what year did [band] release [song or album]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open Bingo",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tell me a movie joke",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, give me a movie quote",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find the address for Barclays",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find business hours for Harris Teeter.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the IMDb rating for [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who plays in [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open today’s Horoscopes",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's popular from [artist]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, sample songs by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me a nearby [pizza] restaurant.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what movies are playing?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find [song or album] by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who plays [character] in [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is [actor]'s latest movie?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who plays in [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what was [actor]’s first movie? Alexa, what is [actor]’s latest movie?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who is in the band [name]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what [genre] movies are playing [future time]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is the IMDb rating for [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who plays [character] in [movie or TV show]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who sings the song [title]?",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Bluetooth",
+        "content": [
+            {
+                "tag_line": "titles",
+                "details": [
+                    {
+                        "name":"Alexa, Bluetooth.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, connect",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, disconnect",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, pair.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, discover my devices",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, connect to my speaker",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, disconnect from my phone.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, connect to my phone.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, disconnect from my speaker.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    
+    {
+        "title": "Shopping",
+        "content": [
+            {
+                "tag_line": "shopping from amazon",
+                "details": [
+                    {
+                        "name":"Alexa, what’s on my shopping list?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, buy more [Android phones].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, reorder [Google pixel].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what are your deals?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where’s my stuff?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where’s my stuff?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, I need to buy laundry detergent",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add XY to my Prime Now shopping cart.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add Product Y to my list.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add eggs to my shopping list",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, track my order.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, buy this album.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, remove eggs from my shopping list",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add [item] to my cart",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add product X to my Amazon Fresh shopping cart.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, buy more coffee.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, buy this song.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, shop for new music by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, buy [song or album] by [artist].",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add [Name of Product] to my shopping list",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    
+    {
+        "title": "Sports",
+        "content": [
+            {
+                "tag_line": "sports commands",
+                "details": [
+                    {
+                        "name":"Alexa, what was the score of the [team] game?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is your favourite [sport] team?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, where is the next [team] game?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who is your favourite [sport] player?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, ask Yahoo Fantasy Football for a score update",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, ask Yahoo Fantasy Football if Colin Kaepernick is playing this week.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, did the [team] win?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Who is [Magic Johnson]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who won the men’s hundred meters?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when do the [team] play next?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what [NHL] games are on tonight?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, give me my Sports Update.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who’s going to win the [Super Bowl]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how tall is [Kobe Bryant]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open kooora app",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many gold medals does [Canada] have?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what are the [league] standings?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, Who won the [Super bowl] last year?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, What teams has [LeBron James] played for?",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Notifications",
+        "content": [
+            {
+                "tag_line": "Notifications and alerts",
+                "details": [
+                    {
+                        "name":"Alexa, what did I miss?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, read my notifications",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what are my notifications?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, previous.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, next.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, delete all of my notifications.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "People",
+        "content": [
+            {
+                "tag_line": "title People",
+                "details": [
+                    
+                    {
+                        "name":"Alexa, who invented a computer?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many people live in [place]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who is Lionel Messi",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, when was Kobe Bryant born?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, tel me about Bill Gits?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who is the prime minister of Germany?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, who invented Alexa?",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Cooking",
+        "content": [
+            {
+                "tag_line": "Cooking & food title",
+                "details": [
+                    
+                    {
+                        "name":"Alexa, set a timer to 10 minutes.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me a pie recipe",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how do you boil an egg?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how much time is needed?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set a timer for the oven for 10 minutes and 30 seconds.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how much time is left?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me the Perfect Pumpkin Pie recipe",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me a pumpkin pie recipe",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, recipe details",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find me a recipe with eggs, condensed milk, and pumpkin.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, add XY minutes to my timer.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how do you make [chocolate chip cookies]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many eggs do I need?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, ingredient details",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {
+        "title": "Math",
+        "content": [
+            {
+                "tag_line": "Math & Conversions",
+                "details": [
+                    
+                    {
+                        "name":"Alexa, what’s [number] plus [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, divide by zero.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] minus [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's 5 plus 7?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] cubed?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, is [number] a prime number?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what's 56 times 33?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] divided by [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, 70 factorial.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] times [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s the square root of [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, how many [units] are in 10 [units]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] squared?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what is [10%] of [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s the value of Pi (to [number] decimal places),?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, what’s [number] to the power of [number]?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, [number] factorial. Alexa, how many [units] are in [units]?",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "SmartHome",
+        "content": [
+            {
+                "tag_line": "SmartHome Lighting",
+                "details": [
+                    {
+                        "name":"Alexa, turn off the living room lights",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on the lights",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn off the Bedroom lights.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on the living room lights",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set bedroom lights to 50%",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn off bedroom lamp",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, raise the temperature 1 degree.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set the temperature to 65.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, lock my back door.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, ask TrackR to find my phone.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, discover my devices.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, connect to my phone.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on Movie Time",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on Bedtime.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, ask Geneva is my laundry is dry.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on the TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn on Netflix.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    
+    
+    
+    {
+        "title": "Echo Show",
+        "content": [
+            {
+                "tag_line": "EchoShow",
+                "details": [
+                    {
+                        "name":"Alexa, what can you show me?",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show my calendar.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me pictures of dogs.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open Uber.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show the Bed room camera.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me the trailer for 'It.'",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me movie showtimes.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show my photos",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me the weekend forecast.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me dogs videos on YouTube.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me eggs recipe from Allrecipes.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play my video Flash Briefing.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me my timers.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Fire TV",
+        "content": [
+            {
+                "tag_line": "Fire TV",
+                "details": [
+                    {
+                        "name":"Alexa, turn on Fire TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn off Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, launch [app name] on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, play on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, [mute/unmute] Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, search for [movie to TV show title] on Fire TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, go to [channel or network name] on Fire TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, find [movie or TV show title] on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, switch to HDMI 2 on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, show me titles with [actor] on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open [app name] on Fire TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, open TV guide on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, return home.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, pause on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, [resume on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, stop on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, rewind on Fire TV.",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set the volume to [level] on Fire TV",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, turn [up/down] the volume on Fire TV.",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Thermostat",
+        "content": [
+            {
+                "tag_line": "thermostat",
+                "details": [
+                    {
+                        "name":"Alexa, set thermostat to on",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set thermostat to off",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set thermostat to 99 Degrees",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set thermostat to cool",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set thermostat to heat",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set thermostat to ecomode",
+                        "isFavorite":false
+                    },
+                    {
+                        "name":"Alexa, set [Name of Thermostat] to 67",
+                        "isFavorite":false
+                    }
+                ]
+            }
+        ]
+    }
+]
