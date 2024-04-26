@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+    alias(libs.plugins.daggerHilt)
 }
 
 android {
@@ -28,6 +30,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    kapt {
+        correctErrorTypes = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -59,6 +64,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation (libs.androidx.material.icons.extended)
+    // navigation-compose :
+    implementation (libs.androidx.navigation.compose)
+    // dagger-hilt :
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    // gson
+    implementation (libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
