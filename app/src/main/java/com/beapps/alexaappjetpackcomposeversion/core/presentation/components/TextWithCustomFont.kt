@@ -3,9 +3,12 @@ package com.beapps.alexaappjetpackcomposeversion.core.presentation.components
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
 import com.beapps.alexaappjetpackcomposeversion.R
 
 
@@ -26,6 +29,9 @@ fun TextWithPoppinsFontFamily(modifier: Modifier = Modifier , text : String) {
     Text(
         modifier = modifier ,
         text = text ,
-        fontFamily = poppinsFontFamily
+        fontFamily = poppinsFontFamily,
+        fontSize = 22.sp,
+        textAlign = TextAlign.Center,
+        color = Color.White
     )
 }
