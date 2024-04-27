@@ -14,18 +14,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsScreen
+import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.CommandsCategoryScreen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.ScreensWithBottomNavigationBar
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.bottomNavigationBarItems
@@ -34,7 +30,9 @@ import com.beapps.alexaappjetpackcomposeversion.settings.presentation.SettingsSc
 import com.beapps.alexaappjetpackcomposeversion.setupAndGroups.presentation.SetupAndGroupsScreen
 import com.beapps.alexaappjetpackcomposeversion.translation.presentation.TranslationScreen
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.AlexaAppJetpackComposeVersionTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,7 +93,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(it)
                         ) {
                             composable(Screen.CommandsScreen.route) {
-                                CommandsScreen()
+                                CommandsCategoryScreen()
                             }
                             composable(Screen.SetupAndGroupsScreen.route) {
                                 SetupAndGroupsScreen()
