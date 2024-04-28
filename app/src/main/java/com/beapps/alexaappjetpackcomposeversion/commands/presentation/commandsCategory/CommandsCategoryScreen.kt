@@ -57,6 +57,8 @@ fun CommandsCategoryScreen(
     val isSearchingActive by commandsViewModel.isSearchingActive.collectAsState()
     val isSearchBarActive = commandsViewModel.isSearchBarActive
     val searchHistory = commandsViewModel.searchHistory
+
+
     val searchBarTrailingIcon: ImageVector? = remember(searchQuery, isSearchBarActive) {
         if (isSearchBarActive && searchQuery.isBlank()) {
             Icons.Default.Close
@@ -68,11 +70,14 @@ fun CommandsCategoryScreen(
             Icons.Default.Close
         }
     }
+
     if (commandsViewModel.isLoading) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
         }
-    } else {
+    }
+
+    else {
         Scaffold(
             Modifier.fillMaxSize()
         ) { padding ->
@@ -134,7 +139,8 @@ fun CommandsCategoryScreen(
 
                 if (isSearchingActive) {
                     CommandsDetailsScreen(commandsViewModel = commandsViewModel)
-                } else {
+                }
+                else {
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(2),
                         modifier = modifier.fillMaxSize().padding(top = 16.dp),

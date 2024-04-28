@@ -16,7 +16,7 @@ interface CommandDao {
     fun getAllFavouriteCommands() : Flow<List<CommandDetailsEntity>>
 
     @Query ("select * from CommandDetailsEntity where categoryType = :categoryType")
-    suspend fun getAllCommandsForSpecificCategory(categoryType : String) : List<CommandDetailsEntity>
+    fun getAllCommandsForSpecificCategory(categoryType : String) : Flow<List<CommandDetailsEntity>>
 
     @Query ("select * from CommandDetailsEntity where title Like '%' || :query || '%'")
     suspend fun getAllCommandsForSearchQuery(query : String) : List<CommandDetailsEntity>

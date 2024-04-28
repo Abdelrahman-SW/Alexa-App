@@ -29,10 +29,8 @@ class CommandsRepoImpl @Inject constructor(
         }
     }
 
-    override suspend fun getAllCommandsForSpecificCategory(categoryType: String): List<CommandDetails> {
-        return commandDatabase.myDao().getAllCommandsForSpecificCategory(categoryType).map {
-            it.toCommandDetails()
-        }
+    override fun getAllCommandsForSpecificCategory(categoryType: String): Flow<List<CommandDetails>> {
+        return commandDatabase.myDao().getAllCommandsForSpecificCategory(categoryType).map { list -> list.map { it.toCommandDetails() } }
     }
 
     override suspend fun updateCommand(commandDetailItem: CommandDetails) {

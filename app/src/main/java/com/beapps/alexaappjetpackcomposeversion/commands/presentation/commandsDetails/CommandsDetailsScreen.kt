@@ -16,10 +16,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.components.CommandCategoryItem
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.components.CommandDetailItem
+import com.beapps.alexaappjetpackcomposeversion.core.domin.shareText
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 
 @Composable
@@ -27,7 +29,9 @@ fun CommandsDetailsScreen(modifier: Modifier = Modifier, commandsViewModel: Comm
     val commandsDetails by commandsViewModel.commandDetails.collectAsState()
     val searchedCommands by commandsViewModel.searchedCommands.collectAsState()
     val isSearchingActive by commandsViewModel.isSearchingActive.collectAsState()
+    val isAddToFavouriteToLoading = commandsViewModel.isAddToFavouriteToLoading
 
+    val context = LocalContext.current
     if (commandsViewModel.isLoading) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
@@ -39,9 +43,21 @@ fun CommandsDetailsScreen(modifier: Modifier = Modifier, commandsViewModel: Comm
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             items(if (isSearchingActive) searchedCommands else commandsDetails) { commandItem ->
-                CommandDetailItem(item = commandItem) {
-                }
+                CommandDetailItem(
+                    item = commandItem,
+                    onItemClick = {
+                        commandsViewModel.playCommand(it.title)
+                    },
+                    onFavouriteClick = { commandsViewModel.onFavouriteClick(it) },
+                    onShareClick = { context.shareText(it.title) },
+                )
                 Divider()
+            }
+        }
+
+        if (isAddToFavouriteToLoading) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                CircularProgressIndicator()
             }
         }
     }

@@ -14,8 +14,10 @@ import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandCa
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -27,20 +29,25 @@ class CommandsViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-    var searchHistory = mutableStateListOf<String>()
-        private set
     var commandCategories by mutableStateOf(listOf<CommandCategory>())
         private set
 
     var isLoading by mutableStateOf(false)
         private set
 
+    var isAddToFavouriteToLoading by mutableStateOf(false)
+        private set
+
     var isSearchBarActive by mutableStateOf(false)
+        private set
+
+    var searchHistory = mutableStateListOf<String>()
         private set
 
     private var currentCategory = MutableStateFlow("")
 
-    val commandDetails = currentCategory.map {
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val commandDetails = currentCategory.flatMapLatest {
         commandsRepo.getAllCommandsForSpecificCategory(it)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), listOf())
 
@@ -95,5 +102,17 @@ class CommandsViewModel @Inject constructor(
 
     fun onActiveChanged(isActive: Boolean) {
         isSearchBarActive = isActive
+    }
+
+    fun playCommand(title: String) {
+
+    }
+
+    fun onFavouriteClick(it: CommandDetails) {
+        viewModelScope.launch {
+            isAddToFavouriteToLoading = true
+            commandsRepo.updateCommand(it.copy(isFavourite = !it.isFavourite))
+            isAddToFavouriteToLoading = false
+        }
     }
 }

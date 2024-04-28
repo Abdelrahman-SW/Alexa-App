@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface CommandsRepo {
     fun getAllFavouriteCommands() : Flow<List<CommandDetails>>
 
-    suspend fun getAllCommandsForSpecificCategory(categoryType : String) : List<CommandDetails>
+    fun getAllCommandsForSpecificCategory(categoryType : String) : Flow<List<CommandDetails>>
 
     suspend fun updateCommand (commandDetailItem: CommandDetails)
 
