@@ -17,11 +17,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.CommandsCategoryScreen
+import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.CommandsDetailsScreen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.ScreensWithBottomNavigationBar
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.bottomNavigationBarItems
@@ -45,18 +48,20 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
                     val backStackEntry by navController.currentBackStackEntryAsState()
+                    val commandsViewModel = hiltViewModel<CommandsViewModel>()
 
                     val selectedIndex by remember {
                         derivedStateOf {
                             bottomNavigationBarItems.indexOfFirst {
-                                it.route == (backStackEntry?.destination?.route ?: 0)
+                                it.route == (backStackEntry?.destination?.route
+                                    ?: Screen.CommandsCategoryScreen.route)
                             }
                         }
                     }
                     Scaffold(
                         bottomBar = {
                             if ((backStackEntry?.destination?.route
-                                    ?: Screen.CommandsScreen.route) in ScreensWithBottomNavigationBar
+                                    ?: Screen.CommandsCategoryScreen.route) in ScreensWithBottomNavigationBar
                             ) {
                                 NavigationBar {
                                     bottomNavigationBarItems.forEachIndexed { index, item ->
@@ -87,13 +92,17 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     ) {
+
                         NavHost(
                             navController = navController,
-                            startDestination = Screen.CommandsScreen.route,
+                            startDestination = Screen.CommandsCategoryScreen.route,
                             modifier = Modifier.padding(it)
                         ) {
-                            composable(Screen.CommandsScreen.route) {
-                                CommandsCategoryScreen()
+                            composable(Screen.CommandsCategoryScreen.route) {
+                                CommandsCategoryScreen(commandsViewModel = commandsViewModel , navController = navController)
+                            }
+                            composable(Screen.CommandsDetailsScreen.route) {
+                                CommandsDetailsScreen(commandsViewModel = commandsViewModel)
                             }
                             composable(Screen.SetupAndGroupsScreen.route) {
                                 SetupAndGroupsScreen()

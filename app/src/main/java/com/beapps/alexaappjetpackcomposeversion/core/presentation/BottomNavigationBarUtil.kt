@@ -19,7 +19,7 @@ data class NavigationBarItem(
 )
 
 val ScreensWithBottomNavigationBar = listOf(
-    Screen.CommandsScreen.route,
+    Screen.CommandsCategoryScreen.route,
     Screen.SetupAndGroupsScreen.route,
     Screen.TranslationScreen.route,
     Screen.SettingsScreen.route,
@@ -30,7 +30,7 @@ val bottomNavigationBarItems = listOf(
        "Commands" ,
        Icons.Filled.KeyboardCommandKey ,
        Icons.Outlined.KeyboardCommandKey,
-       Screen.CommandsScreen.route
+       Screen.CommandsCategoryScreen.route
    ),
     NavigationBarItem(
         "Setup" ,
