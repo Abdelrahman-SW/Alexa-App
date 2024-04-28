@@ -6,6 +6,8 @@ import androidx.room.Room
 import com.beapps.alexaappjetpackcomposeversion.commands.data.db.CommandDatabase
 import com.beapps.alexaappjetpackcomposeversion.commands.data.repo.CommandsRepoImpl
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
+import com.beapps.alexaappjetpackcomposeversion.commands.domain.SpeakerManager
+import com.beapps.alexaappjetpackcomposeversion.commands.domain.SpeakerManagerImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,5 +36,11 @@ object CommandModule {
             context,
             commandDatabase
         )
+    }
+
+    @Provides
+    @Singleton
+    fun provideSpeakerManager() : SpeakerManager {
+        return SpeakerManagerImpl()
     }
 }

@@ -1,9 +1,6 @@
 package com.beapps.alexaappjetpackcomposeversion.commands.presentation
 
 import android.util.Log
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -12,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandCategory
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
+import com.beapps.alexaappjetpackcomposeversion.commands.domain.SpeakerManager
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,8 +22,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CommandsViewModel @Inject constructor(
-    private val commandsRepo: CommandsRepo
+class CommandsSharedViewModel @Inject constructor(
+    private val commandsRepo: CommandsRepo,
+    private val speakerManager: SpeakerManager
 ) : ViewModel() {
 
 
@@ -48,6 +47,10 @@ class CommandsViewModel @Inject constructor(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val commandDetails = currentCategory.flatMapLatest {
+        if(it == "Favorite") {
+            commandsRepo.getAllFavouriteCommands()
+        }
+        else
         commandsRepo.getAllCommandsForSpecificCategory(it)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), listOf())
 
@@ -64,6 +67,7 @@ class CommandsViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
     init {
+        speakerManager.setup()
         viewModelScope.launch {
             isLoading = true
             commandCategories = commandsRepo.getAllCommandsCategories()
@@ -89,8 +93,7 @@ class CommandsViewModel @Inject constructor(
             else {
                 onSearchDone(searchQuery.value)
             }
-        }
-        else {
+        } else {
             isSearchBarActive = false
         }
     }
@@ -105,6 +108,11 @@ class CommandsViewModel @Inject constructor(
     }
 
     fun playCommand(title: String) {
+        viewModelScope.launch {
+            speakerManager.speak(title).collect {
+                Log.d("ab_do", "Speech result ${it.name}")
+            }
+        }
 
     }
 
@@ -114,5 +122,10 @@ class CommandsViewModel @Inject constructor(
             commandsRepo.updateCommand(it.copy(isFavourite = !it.isFavourite))
             isAddToFavouriteToLoading = false
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        speakerManager.pause()
     }
 }

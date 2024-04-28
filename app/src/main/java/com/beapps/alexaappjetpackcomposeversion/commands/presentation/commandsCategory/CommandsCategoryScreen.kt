@@ -18,10 +18,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.CheckBoxOutlineBlank
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.History
-import androidx.compose.material.icons.filled.QuestionMark
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -38,7 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsViewModel
+import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.components.CommandCategoryItem
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.CommandsDetailsScreen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
@@ -48,15 +46,15 @@ import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.pop
 @Composable
 fun CommandsCategoryScreen(
     modifier: Modifier = Modifier,
-    commandsViewModel: CommandsViewModel,
+    commandsSharedViewModel: CommandsSharedViewModel,
     navController: NavController
 ) {
 
-    val commandCategories = commandsViewModel.commandCategories
-    val searchQuery by commandsViewModel.searchQuery.collectAsState()
-    val isSearchingActive by commandsViewModel.isSearchingActive.collectAsState()
-    val isSearchBarActive = commandsViewModel.isSearchBarActive
-    val searchHistory = commandsViewModel.searchHistory
+    val commandCategories = commandsSharedViewModel.commandCategories
+    val searchQuery by commandsSharedViewModel.searchQuery.collectAsState()
+    val isSearchingActive by commandsSharedViewModel.isSearchingActive.collectAsState()
+    val isSearchBarActive = commandsSharedViewModel.isSearchBarActive
+    val searchHistory = commandsSharedViewModel.searchHistory
 
 
     val searchBarTrailingIcon: ImageVector? = remember(searchQuery, isSearchBarActive) {
@@ -71,7 +69,7 @@ fun CommandsCategoryScreen(
         }
     }
 
-    if (commandsViewModel.isLoading) {
+    if (commandsSharedViewModel.isLoading) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
         }
@@ -88,13 +86,13 @@ fun CommandsCategoryScreen(
                 SearchBar(modifier = Modifier.align(Alignment.CenterHorizontally),
                     query = searchQuery,
                     onQueryChange = {
-                        commandsViewModel.onSearchQueryChanged(it)
+                        commandsSharedViewModel.onSearchQueryChanged(it)
                     },
                     onSearch = {
-                        commandsViewModel.onSearchDone(it)
+                        commandsSharedViewModel.onSearchDone(it)
                     },
-                    active = commandsViewModel.isSearchBarActive,
-                    onActiveChange = { commandsViewModel.onActiveChanged(it) },
+                    active = commandsSharedViewModel.isSearchBarActive,
+                    onActiveChange = { commandsSharedViewModel.onActiveChanged(it) },
                     placeholder = {
                         Text(
                             text = "Search For Commands .. ", fontFamily = poppinsFontFamily
@@ -108,7 +106,7 @@ fun CommandsCategoryScreen(
                             Icon(imageVector = it,
                                 contentDescription = "searchBarTrailingIcon",
                                 modifier = Modifier.clickable {
-                                    commandsViewModel.onSearchTrailingIconClicked()
+                                    commandsSharedViewModel.onSearchTrailingIconClicked()
                                 })
                         }
 
@@ -122,8 +120,8 @@ fun CommandsCategoryScreen(
                         searchHistory.reversed().forEach { search ->
                             Row(modifier = Modifier.fillMaxWidth()
                                 .clickable {
-                                    commandsViewModel.onActiveChanged(false)
-                                    commandsViewModel.onSearchQueryChanged(search)
+                                    commandsSharedViewModel.onActiveChanged(false)
+                                    commandsSharedViewModel.onSearchQueryChanged(search)
                                 }
                                 .padding(16.dp)) {
                                 Icon(
@@ -138,7 +136,7 @@ fun CommandsCategoryScreen(
                 }
 
                 if (isSearchingActive) {
-                    CommandsDetailsScreen(commandsViewModel = commandsViewModel)
+                    CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel)
                 }
                 else {
                     LazyVerticalGrid(
@@ -151,7 +149,7 @@ fun CommandsCategoryScreen(
                         items(commandCategories) { category ->
                             CommandCategoryItem(item = category) {
                                 navController.navigate(Screen.CommandsDetailsScreen.route)
-                                commandsViewModel.onSelectedCategory(it.title)
+                                commandsSharedViewModel.onSelectedCategory(it.title)
                             }
                         }
                     }

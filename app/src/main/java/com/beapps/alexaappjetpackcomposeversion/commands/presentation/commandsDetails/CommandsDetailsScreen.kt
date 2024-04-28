@@ -1,13 +1,10 @@
 package com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
@@ -18,21 +15,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsViewModel
-import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.components.CommandCategoryItem
+import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.components.CommandDetailItem
 import com.beapps.alexaappjetpackcomposeversion.core.domin.shareText
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun CommandsDetailsScreen(modifier: Modifier = Modifier, commandsViewModel: CommandsViewModel) {
-    val commandsDetails by commandsViewModel.commandDetails.collectAsState()
-    val searchedCommands by commandsViewModel.searchedCommands.collectAsState()
-    val isSearchingActive by commandsViewModel.isSearchingActive.collectAsState()
-    val isAddToFavouriteToLoading = commandsViewModel.isAddToFavouriteToLoading
+fun CommandsDetailsScreen(modifier: Modifier = Modifier, commandsSharedViewModel: CommandsSharedViewModel) {
+    val commandsDetails by commandsSharedViewModel.commandDetails.collectAsState()
+    val searchedCommands by commandsSharedViewModel.searchedCommands.collectAsState()
+    val isSearchingActive by commandsSharedViewModel.isSearchingActive.collectAsState()
+    val isAddToFavouriteToLoading = commandsSharedViewModel.isAddToFavouriteToLoading
 
     val context = LocalContext.current
-    if (commandsViewModel.isLoading) {
+    if (commandsSharedViewModel.isLoading) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
         }
@@ -42,13 +38,14 @@ fun CommandsDetailsScreen(modifier: Modifier = Modifier, commandsViewModel: Comm
             contentPadding = PaddingValues(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            items(if (isSearchingActive) searchedCommands else commandsDetails) { commandItem ->
+            items(if (isSearchingActive) searchedCommands else commandsDetails , key = {it.id}) { commandItem ->
                 CommandDetailItem(
+                    modifier = Modifier.animateItemPlacement(),
                     item = commandItem,
                     onItemClick = {
-                        commandsViewModel.playCommand(it.title)
+                        commandsSharedViewModel.playCommand(it.title)
                     },
-                    onFavouriteClick = { commandsViewModel.onFavouriteClick(it) },
+                    onFavouriteClick = { commandsSharedViewModel.onFavouriteClick(it) },
                     onShareClick = { context.shareText(it.title) },
                 )
                 Divider()
