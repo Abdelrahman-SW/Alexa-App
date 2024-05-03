@@ -1,28 +1,27 @@
 package com.beapps.alexaappjetpackcomposeversion.commands.data.repo
 
 import android.content.Context
-import android.util.Log
 import com.beapps.alexaappjetpackcomposeversion.commands.data.db.CommandDatabase
-import com.beapps.alexaappjetpackcomposeversion.commands.data.getDrawableIdFromCategoryName
+import com.beapps.alexaappjetpackcomposeversion.commands.domain.getDrawableIdFromCategoryName
 import com.beapps.alexaappjetpackcomposeversion.commands.data.toCommandDetails
 import com.beapps.alexaappjetpackcomposeversion.commands.data.toCommandDetailsEntity
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandCategory
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
+import com.beapps.alexaappjetpackcomposeversion.core.data.loadJSONData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
-import java.io.IOException
-import java.io.InputStream
 import javax.inject.Inject
 
 class CommandsRepoImpl @Inject constructor(
     private val context: Context, private val commandDatabase: CommandDatabase
 ) : CommandsRepo {
 
-    private val jsonStr by lazy { loadJSONData() }
+
+    private val jsonStr by lazy { loadJSONData(context , "commands.json") }
     override fun getAllFavouriteCommands(): Flow<List<CommandDetails>> {
         return commandDatabase.myDao().getAllFavouriteCommands().map { list ->
             list.map { it.toCommandDetails() }
@@ -56,22 +55,6 @@ class CommandsRepoImpl @Inject constructor(
         sharedPref.edit().putBoolean("isCommandsSaved", isSaved).apply()
     }
 
-    private fun loadJSONData(): String? {
-        val filePath = "commands.json"
-        val json: String = try {
-            val inputStream: InputStream = context.assets.open(filePath)
-            val size: Int = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            String(buffer)
-        } catch (ex: IOException) {
-            ex.printStackTrace()
-            Log.d("ab_do", "loadJSONFromAsset: -->" + ex.message)
-            return null
-        }
-        return json
-    }
 
     override suspend fun getAllCommandsCategories(): List<CommandCategory> {
         return withContext(Dispatchers.IO) {

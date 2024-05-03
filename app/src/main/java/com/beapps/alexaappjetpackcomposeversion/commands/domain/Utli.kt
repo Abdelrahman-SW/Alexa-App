@@ -1,4 +1,4 @@
-package com.beapps.alexaappjetpackcomposeversion.commands.data
+package com.beapps.alexaappjetpackcomposeversion.commands.domain
 
 import com.beapps.alexaappjetpackcomposeversion.R
 

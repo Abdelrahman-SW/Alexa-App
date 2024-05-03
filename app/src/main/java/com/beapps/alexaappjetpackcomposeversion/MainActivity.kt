@@ -16,7 +16,7 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,9 +30,10 @@ import com.beapps.alexaappjetpackcomposeversion.core.presentation.ScreensWithBot
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.bottomNavigationBarItems
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.settings.presentation.SettingsScreen
-import com.beapps.alexaappjetpackcomposeversion.setupAndGroups.presentation.SetupAndGroupsScreen
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupScreen
 import com.beapps.alexaappjetpackcomposeversion.translation.presentation.TranslationScreen
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.AlexaAppJetpackComposeVersionTheme
+import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AlexaAppJetpackComposeVersionTheme {
+            AlexaAppJetpackComposeVersionTheme (dynamicColor = false) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -63,7 +64,8 @@ class MainActivity : ComponentActivity() {
                             if ((backStackEntry?.destination?.route
                                     ?: Screen.CommandsCategoryScreen.route) in ScreensWithBottomNavigationBar
                             ) {
-                                NavigationBar {
+                                NavigationBar (containerColor = mainComponentColor,
+                                    contentColor = Color.Gray) {
                                     bottomNavigationBarItems.forEachIndexed { index, item ->
                                         NavigationBarItem(
                                             selected = selectedIndex == index,
@@ -82,7 +84,7 @@ class MainActivity : ComponentActivity() {
                                             label = {
                                                 Text(
                                                     text = item.title,
-                                                    fontWeight = if (selectedIndex == index) FontWeight.ExtraBold else FontWeight.Normal,
+                                                    maxLines = 1,
                                                     fontFamily = poppinsFontFamily
                                                 )
                                             }
@@ -105,7 +107,7 @@ class MainActivity : ComponentActivity() {
                                 CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel)
                             }
                             composable(Screen.SetupAndGroupsScreen.route) {
-                                SetupAndGroupsScreen()
+                                SetupScreen()
                             }
                             composable(Screen.TranslationScreen.route) {
                                 TranslationScreen()
