@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -54,9 +55,10 @@ fun CommandsDetailsScreen(
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
+
     Scaffold(modifier = Modifier
         .fillMaxSize()
-        .nestedScroll(scrollBehavior.nestedScrollConnection),
+        .then(if (!isSearchingActive) modifier.nestedScroll(scrollBehavior.nestedScrollConnection) else modifier),
         topBar = {
             if (!isSearchingActive) {
                 MediumTopAppBar(
@@ -80,9 +82,7 @@ fun CommandsDetailsScreen(
                     scrollBehavior = scrollBehavior
                 )
             }
-        }
-    )
-    { padding ->
+        }) { padding ->
         if (commandsSharedViewModel.isLoading) {
             Box(
                 modifier = Modifier
@@ -100,8 +100,7 @@ fun CommandsDetailsScreen(
                 contentPadding = PaddingValues(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                items(
-                    if (isSearchingActive) searchedCommands else commandsDetails,
+                items(if (isSearchingActive) searchedCommands else commandsDetails,
                     key = { it.id }) { commandItem ->
                     CommandDetailItem(
                         modifier = Modifier.animateItemPlacement(),
