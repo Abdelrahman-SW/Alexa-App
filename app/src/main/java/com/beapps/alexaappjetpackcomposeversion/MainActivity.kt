@@ -28,9 +28,11 @@ import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDe
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.ScreensWithBottomNavigationBar
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.bottomNavigationBarItems
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.settings.presentation.SettingsScreen
-import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupScreen
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupSharedViewModel
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupDetails.SetupDetailsScreen
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.SetupScreen
 import com.beapps.alexaappjetpackcomposeversion.translation.presentation.TranslationScreen
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.AlexaAppJetpackComposeVersionTheme
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
@@ -50,6 +52,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     val backStackEntry by navController.currentBackStackEntryAsState()
                     val commandsSharedViewModel = hiltViewModel<CommandsSharedViewModel>()
+                    val setupSharedViewModel = hiltViewModel<SetupSharedViewModel>()
 
                     val selectedIndex by remember {
                         derivedStateOf {
@@ -104,10 +107,13 @@ class MainActivity : ComponentActivity() {
                                 CommandsCategoryScreen(commandsSharedViewModel = commandsSharedViewModel , navController = navController)
                             }
                             composable(Screen.CommandsDetailsScreen.route) {
-                                CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel)
+                                CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel , navController = navController)
                             }
                             composable(Screen.SetupAndGroupsScreen.route) {
-                                SetupScreen()
+                                SetupScreen(viewModel = setupSharedViewModel , navController = navController)
+                            }
+                            composable(Screen.SetupAndGroupsScreenDetails.route) {
+                                SetupDetailsScreen(viewModel = setupSharedViewModel , navController = navController)
                             }
                             composable(Screen.TranslationScreen.route) {
                                 TranslationScreen()

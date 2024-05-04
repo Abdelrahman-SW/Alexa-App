@@ -10,22 +10,32 @@ import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class SetupViewModel @Inject constructor(
+class SetupSharedViewModel @Inject constructor(
     repo: SetupRepo
 ) : ViewModel() {
+
+
+    val selectedSetupItem = MutableStateFlow<SetupItem?>(null)
+
+    val selectedSetupItemDetail = selectedSetupItem.onEach {
+        isLoading = true
+    }.map {
+        repo.getSetupDetails(it)
+    }.onEach { isLoading = false }
 
     var isLoading by mutableStateOf(false)
         private set
 
     private val setupItems = MutableStateFlow<List<SetupItem>>(listOf())
 
-    var setupGroupsItems = setupItems.map {it->
+    var setupGroupsItems = setupItems.map { it ->
         it.filter { it.type == SetupType.GROUPS }
     }
-    var setupMainSetupItems = setupItems.map {it->
+    var setupMainSetupItems = setupItems.map { it ->
         it.filter { it.type == SetupType.MAIN_SETUP }
     }
 
@@ -33,6 +43,10 @@ class SetupViewModel @Inject constructor(
         isLoading = true
         setupItems.value = repo.getSetupData()
         isLoading = false
+    }
+
+    fun onSetupItemClick(setupItem: SetupItem) {
+        selectedSetupItem.value = setupItem
     }
 
 }

@@ -15,3 +15,15 @@ fun Context.shareText(text: String) {
     val shareIntent = Intent.createChooser(sendIntent, "Share Commands With Others !")
     startActivity(shareIntent)
 }
+
+fun Context.getDrawableIdFromImageName(imageName: String?): Int? {
+    return imageName?.let {
+        if (it.isEmpty()) return null
+        val id = resources.getIdentifier(
+            it,
+            "drawable",
+            packageName
+        )
+        if (id <= 0) return null else id
+    }
+}

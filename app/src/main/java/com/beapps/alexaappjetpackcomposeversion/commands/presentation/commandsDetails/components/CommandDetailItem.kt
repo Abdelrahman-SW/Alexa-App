@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.lightBlue100
 
 

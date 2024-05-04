@@ -1,6 +1,11 @@
 package com.beapps.alexaappjetpackcomposeversion.core.presentation
 
+import android.content.Context
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import com.beapps.alexaappjetpackcomposeversion.R
 import kotlin.random.Random
 
 fun randomGradientColors(): List<Color> {
@@ -30,3 +35,16 @@ fun randomColor(): Color {
     )
     return color1
 }
+
+
+val poppinsFontFamily = FontFamily(
+    Font(R.font.poppins_black , FontWeight.Black),
+    Font(R.font.poppins_bold , FontWeight.Bold),
+    Font(R.font.poppins_light , FontWeight.Light),
+    Font(R.font.poppins_medium , FontWeight.Medium),
+    Font(R.font.poppins_regular , FontWeight.Normal),
+    Font(R.font.poppins_extra_bold , FontWeight.ExtraBold),
+    Font(R.font.poppins_extra_light , FontWeight.ExtraLight),
+    Font(R.font.poppins_semi_bold , FontWeight.SemiBold),
+    Font(R.font.poppins_thin , FontWeight.Thin)
+)

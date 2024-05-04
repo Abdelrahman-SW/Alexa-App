@@ -1,4 +1,4 @@
-package com.beapps.alexaappjetpackcomposeversion.setup.presentation.components
+package com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 
 @Composable

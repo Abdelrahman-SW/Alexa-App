@@ -43,7 +43,7 @@ class CommandsSharedViewModel @Inject constructor(
     var searchHistory = mutableStateListOf<String>()
         private set
 
-    private var currentCategory = MutableStateFlow("")
+    var currentCategory = MutableStateFlow("")
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val commandDetails = currentCategory.flatMapLatest {

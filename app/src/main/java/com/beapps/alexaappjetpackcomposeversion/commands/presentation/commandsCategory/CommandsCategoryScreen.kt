@@ -46,7 +46,7 @@ import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSh
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.components.CommandCategoryItem
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.CommandsDetailsScreen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -93,10 +93,11 @@ fun CommandsCategoryScreen(
                             RoundedCornerShape(bottomEnd = 32.dp, bottomStart = 32.dp)
                         )
                         .background(mainComponentColor)
-                        .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 32.dp)
+                        .padding(top = 24.dp, start = 16.dp, end = 16.dp, bottom = 38.dp)
 
                 ) {
                     Text(
+                        modifier = Modifier.padding(start = 4.dp),
                         text = "Welcome To Alexa",
                         fontSize = 22.sp,
                         fontFamily = poppinsFontFamily,
@@ -104,6 +105,7 @@ fun CommandsCategoryScreen(
                     )
 
                     Text(
+                        modifier = Modifier.padding(start = 4.dp),
                         text = "Explore Commands make it easy Now .. !",
                         fontSize = 12.sp,
                         fontFamily = poppinsFontFamily,
@@ -181,7 +183,7 @@ fun CommandsCategoryScreen(
                 )
 
                 if (isSearchingActive) {
-                    CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel)
+                    CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel , navController = navController)
                 }
                 else {
                     LazyVerticalGrid(

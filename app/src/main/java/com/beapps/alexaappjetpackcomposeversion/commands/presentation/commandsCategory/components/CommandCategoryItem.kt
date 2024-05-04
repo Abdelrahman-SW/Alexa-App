@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandCategory
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.darkGray
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor35Alpha

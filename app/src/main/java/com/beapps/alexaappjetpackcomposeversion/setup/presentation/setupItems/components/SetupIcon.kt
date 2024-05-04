@@ -1,4 +1,4 @@
-package com.beapps.alexaappjetpackcomposeversion.setup.presentation.components
+package com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

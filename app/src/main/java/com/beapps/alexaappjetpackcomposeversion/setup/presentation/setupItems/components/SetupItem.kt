@@ -1,4 +1,4 @@
-package com.beapps.alexaappjetpackcomposeversion.setup.presentation.components
+package com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.components.poppinsFontFamily
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.randomGradientColors
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupItem
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.lightBlue100
