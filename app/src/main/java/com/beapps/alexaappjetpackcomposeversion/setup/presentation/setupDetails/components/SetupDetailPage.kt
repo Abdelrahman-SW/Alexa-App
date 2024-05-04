@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -19,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -43,7 +45,7 @@ fun SetupDetailPage(modifier: Modifier = Modifier, setupDetailItem: SetupDetailI
                 .padding(vertical = 16.dp, horizontal = 12.dp)
         ) {
             setupDetailItem.imageId?.let { id ->
-                Image(painter = painterResource(id = id), contentDescription = "image" , modifier = Modifier.weight(3f))
+                Image(painter = painterResource(id = id), contentDescription = "image" , modifier = Modifier.fillMaxWidth().weight(2f) , contentScale = ContentScale.Fit)
                 Spacer(modifier = Modifier.height(16.dp))
             }
             setupDetailItem.content?.let {
