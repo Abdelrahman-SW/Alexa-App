@@ -80,6 +80,9 @@ dependencies {
     kapt (libs.androidx.room.compiler)
     // speech
     implementation (libs.speech)
+    // Translate
+    implementation(libs.translate)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -12,6 +12,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -33,7 +34,7 @@ import com.beapps.alexaappjetpackcomposeversion.settings.presentation.SettingsSc
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupDetails.SetupDetailsScreen
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.SetupScreen
-import com.beapps.alexaappjetpackcomposeversion.translation.presentation.TranslationScreen
+import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.presentation.TranslationScreen
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.AlexaAppJetpackComposeVersionTheme
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,7 +44,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AlexaAppJetpackComposeVersionTheme (dynamicColor = false) {
+            val viewModel = hiltViewModel<MainViewModel>()
+            LaunchedEffect(key1 = true) {
+                viewModel.downloadAllModels()
+            }
+            AlexaAppJetpackComposeVersionTheme(dynamicColor = false) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -67,8 +72,10 @@ class MainActivity : ComponentActivity() {
                             if ((backStackEntry?.destination?.route
                                     ?: Screen.CommandsCategoryScreen.route) in ScreensWithBottomNavigationBar
                             ) {
-                                NavigationBar (containerColor = mainComponentColor,
-                                    contentColor = Color.Gray) {
+                                NavigationBar(
+                                    containerColor = mainComponentColor,
+                                    contentColor = Color.Gray
+                                ) {
                                     bottomNavigationBarItems.forEachIndexed { index, item ->
                                         NavigationBarItem(
                                             selected = selectedIndex == index,
@@ -104,16 +111,28 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(it)
                         ) {
                             composable(Screen.CommandsCategoryScreen.route) {
-                                CommandsCategoryScreen(commandsSharedViewModel = commandsSharedViewModel , navController = navController)
+                                CommandsCategoryScreen(
+                                    commandsSharedViewModel = commandsSharedViewModel,
+                                    navController = navController
+                                )
                             }
                             composable(Screen.CommandsDetailsScreen.route) {
-                                CommandsDetailsScreen(commandsSharedViewModel = commandsSharedViewModel , navController = navController)
+                                CommandsDetailsScreen(
+                                    commandsSharedViewModel = commandsSharedViewModel,
+                                    navController = navController
+                                )
                             }
                             composable(Screen.SetupAndGroupsScreen.route) {
-                                SetupScreen(viewModel = setupSharedViewModel , navController = navController)
+                                SetupScreen(
+                                    viewModel = setupSharedViewModel,
+                                    navController = navController
+                                )
                             }
                             composable(Screen.SetupAndGroupsScreenDetails.route) {
-                                SetupDetailsScreen(viewModel = setupSharedViewModel , navController = navController)
+                                SetupDetailsScreen(
+                                    viewModel = setupSharedViewModel,
+                                    navController = navController
+                                )
                             }
                             composable(Screen.TranslationScreen.route) {
                                 TranslationScreen()

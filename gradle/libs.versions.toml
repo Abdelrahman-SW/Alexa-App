@@ -16,6 +16,7 @@ materialIconsExtended = "1.6.6"
 navigationCompose = "2.7.7"
 roomVersion = "2.6.1"
 speech = "1.6.2"
+translate = "17.0.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 speech = { module = "net.gotev:speech", version.ref = "speech" }
+translate = { module = "com.google.mlkit:translate", version.ref = "translate" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -3,7 +3,11 @@ package com.beapps.alexaappjetpackcomposeversion.core.domin
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import android.widget.Toast
 import com.beapps.alexaappjetpackcomposeversion.R
 
@@ -57,4 +61,23 @@ fun Context.shareApp(type: String = "text/plain", subject: String , chooserTitle
     } catch (e: Exception) {
         e.printStackTrace();
     }
+}
+
+
+fun Context.isDeviceConnectedToWifi(): Boolean {
+    val connectivityManager =
+        getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        val network: Network? = connectivityManager.activeNetwork
+        return if (network != null) {
+            val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
+            networkCapabilities != null && networkCapabilities.hasTransport(
+                NetworkCapabilities.TRANSPORT_WIFI
+            )
+        }
+        else {
+            false
+        }
+    }
+    return true
 }

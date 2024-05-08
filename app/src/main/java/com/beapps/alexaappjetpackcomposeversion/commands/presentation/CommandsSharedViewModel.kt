@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandCategory
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
-import com.beapps.alexaappjetpackcomposeversion.commands.domain.SpeakerManager
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
+import com.beapps.alexaappjetpackcomposeversion.core.domin.SpeakerManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
