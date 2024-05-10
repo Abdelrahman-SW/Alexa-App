@@ -34,7 +34,6 @@ class TranslationViewModel @Inject constructor(
 
     fun init() {
         theSpeechRecognizer.init()
-        theSpeechRecognizer.setLanguage("ar")
         speakerManager.setup()
     }
 
@@ -43,7 +42,6 @@ class TranslationViewModel @Inject constructor(
             selectedLanguage = language,
             speechRecognizerResult = "",
             translationResult = "",
-            speechRecognizerState = SpeechRecognizerState.Ready
         )
         theSpeechRecognizer.setLanguage(language.tag)
     }
@@ -57,8 +55,7 @@ class TranslationViewModel @Inject constructor(
                 Log.d("SpeechRecognizer", "result: $result")
                 when (result) {
                     SpeechResult.EndOfSpeech -> {
-                        screenState =
-                            screenState.copy(speechRecognizerState = SpeechRecognizerState.Ready)
+                        screenState = screenState.copy(speechRecognizerState = SpeechRecognizerState.Ready)
                     }
 
                     is SpeechResult.Error -> {
@@ -66,12 +63,10 @@ class TranslationViewModel @Inject constructor(
                             speechRecognizerResult = "",
                             speechRecognizerState = SpeechRecognizerState.Error(result.error)
                         )
-                        cancel()
                     }
 
                     is SpeechResult.FinalResult -> {
                         screenState = screenState.copy(speechRecognizerResult = result.result)
-                        cancel()
                     }
 
                     is SpeechResult.PartialResult -> {
@@ -103,7 +98,7 @@ class TranslationViewModel @Inject constructor(
     }
 
     fun onTranslateBtnClicked() {
-        screenState = screenState.copy(translationState = TranslationState.Idle)
+        screenState = screenState.copy(translationState = TranslationState.Translating , translationResult = "")
         currentTranslationJob?.let {
             if (!it.isCancelled) it.cancel()
         }
@@ -111,15 +106,18 @@ class TranslationViewModel @Inject constructor(
             translator.translate(
                 text = screenState.speechRecognizerResult,
                 sourceLanguage = screenState.selectedLanguage!!,
-            ).collect {
+            ).collect { it ->
                 screenState = when (it) {
                     is TranslateResult.Error -> {
                         screenState.copy(translationState = TranslationState.Error(it.error))
                     }
 
                     is TranslateResult.Success -> {
+                        speakerManager.speak(it.translatedText).collect{result->
+                            Log.d("ab_do" , result.name)
+                        }
                         screenState.copy(
-                            translationState = TranslationState.Idle,
+                            translationState = TranslationState.Ready,
                             translationResult = it.translatedText
                         )
                     }
@@ -138,6 +136,12 @@ class TranslationViewModel @Inject constructor(
 
     fun handleAudioPermResult(granted: Boolean) {
         screenState = screenState.copy(isRecordAudioPermGranted = granted)
+    }
+
+
+    override fun onCleared() {
+        super.onCleared()
+        speakerManager.pause()
     }
 
 

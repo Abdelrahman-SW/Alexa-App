@@ -15,12 +15,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -131,7 +129,8 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                     is TranslationErrors.Others -> state.error.e.message ?: "No message"
                 }
 
-                TranslationState.Idle -> "Ready To Translate"
+                TranslationState.Ready -> "Ready To Translate"
+                TranslationState.Translating -> "Translating ..."
             },
             fontSize = 24.sp,
             textAlign = TextAlign.Center
@@ -146,9 +145,12 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
         )
 
 
-        Button(onClick = {
-            translationViewModel.onLanguageBtnClicked()
-        }) {
+        Button(
+            onClick = {
+                translationViewModel.onLanguageBtnClicked()
+            }, enabled = screenState.speechRecognizerState
+                    !is SpeechRecognizerState.Listening
+        ) {
             Text(text = screenState.selectedLanguage?.name ?: "Show Languages")
         }
 

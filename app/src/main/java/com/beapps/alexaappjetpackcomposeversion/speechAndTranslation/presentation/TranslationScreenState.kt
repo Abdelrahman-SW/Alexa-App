@@ -12,7 +12,7 @@ data class TranslationScreenState(
     val translationResult: String = "",
     val selectedLanguage : SupportedLanguages? = null,
     val speechRecognizerState: SpeechRecognizerState = SpeechRecognizerState.Ready,
-    val translationState: TranslationState = TranslationState.Idle
+    val translationState: TranslationState = TranslationState.Ready
 )
 
 
@@ -24,7 +24,8 @@ sealed class SpeechRecognizerState {
 }
 
 sealed class TranslationState {
-    data object Idle : TranslationState()
+    data object Ready : TranslationState()
+    data object Translating : TranslationState()
     data class Error (val error: TranslationErrors) : TranslationState()
 
 }

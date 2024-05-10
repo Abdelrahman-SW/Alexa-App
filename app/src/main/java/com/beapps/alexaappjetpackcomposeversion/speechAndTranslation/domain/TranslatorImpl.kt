@@ -32,7 +32,8 @@ class TranslatorImpl : Translator {
                                         TranslationErrors.EmptyResult
                                     )
                                 )
-                            } else {
+                            }
+                            else {
                                 trySend(TranslateResult.Success(result))
                             }
                             close()
@@ -41,7 +42,8 @@ class TranslatorImpl : Translator {
                             trySend(TranslateResult.Error(TranslationErrors.Others(e)))
                             close()
                         }
-                } else {
+                }
+                else {
                     trySend(TranslateResult.Error(TranslationErrors.ModelNotFound))
                     close()
                 }
