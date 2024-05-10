@@ -1,5 +1,6 @@
 package com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.presentation
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,6 +13,7 @@ import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.TheS
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.TranslateResult
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.Translator
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,6 +25,9 @@ class TranslationViewModel @Inject constructor(
     private val translator: Translator
 ) : ViewModel() {
 
+
+    private var currentTranslationJob: Job? = null
+    private var currentSpeechRecognizerJob: Job? = null
     var screenState: TranslationScreenState by mutableStateOf(TranslationScreenState())
         private set
 
@@ -34,18 +39,26 @@ class TranslationViewModel @Inject constructor(
     }
 
     fun onSelectedLanguage(language: SupportedLanguages) {
-        screenState = screenState.copy(selectedLanguage = language)
+        screenState = screenState.copy(
+            selectedLanguage = language,
+            speechRecognizerResult = "",
+            translationResult = "",
+            speechRecognizerState = SpeechRecognizerState.Ready
+        )
         theSpeechRecognizer.setLanguage(language.tag)
     }
 
     private fun startListening() {
-        viewModelScope.launch {
+        currentSpeechRecognizerJob?.let {
+            if (!it.isCancelled) it.cancel()
+        }
+        currentSpeechRecognizerJob = viewModelScope.launch {
             theSpeechRecognizer.startListening().collect { result ->
+                Log.d("SpeechRecognizer", "result: $result")
                 when (result) {
                     SpeechResult.EndOfSpeech -> {
                         screenState =
                             screenState.copy(speechRecognizerState = SpeechRecognizerState.Ready)
-                        cancel()
                     }
 
                     is SpeechResult.Error -> {
@@ -53,10 +66,12 @@ class TranslationViewModel @Inject constructor(
                             speechRecognizerResult = "",
                             speechRecognizerState = SpeechRecognizerState.Error(result.error)
                         )
+                        cancel()
                     }
 
                     is SpeechResult.FinalResult -> {
                         screenState = screenState.copy(speechRecognizerResult = result.result)
+                        cancel()
                     }
 
                     is SpeechResult.PartialResult -> {
@@ -84,12 +99,15 @@ class TranslationViewModel @Inject constructor(
 
     private fun stopListening() {
         theSpeechRecognizer.stopListening()
-        screenState = screenState.copy(speechRecognizerState =  SpeechRecognizerState.Ready)
+        screenState = screenState.copy(speechRecognizerState = SpeechRecognizerState.Ready)
     }
 
     fun onTranslateBtnClicked() {
         screenState = screenState.copy(translationState = TranslationState.Idle)
-        viewModelScope.launch {
+        currentTranslationJob?.let {
+            if (!it.isCancelled) it.cancel()
+        }
+        currentTranslationJob = viewModelScope.launch {
             translator.translate(
                 text = screenState.speechRecognizerResult,
                 sourceLanguage = screenState.selectedLanguage!!,
@@ -100,7 +118,10 @@ class TranslationViewModel @Inject constructor(
                     }
 
                     is TranslateResult.Success -> {
-                        screenState.copy(translationState = TranslationState.Idle, translationResult = it.translatedText)
+                        screenState.copy(
+                            translationState = TranslationState.Idle,
+                            translationResult = it.translatedText
+                        )
                     }
                 }
             }

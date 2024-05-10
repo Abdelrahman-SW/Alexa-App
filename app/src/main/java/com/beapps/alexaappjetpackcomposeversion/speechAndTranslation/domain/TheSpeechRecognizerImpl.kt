@@ -50,7 +50,6 @@ class TheSpeechRecognizerImpl(private val context: Context) : TheSpeechRecognize
 
                 override fun onEndOfSpeech() {
                     trySend(SpeechResult.EndOfSpeech)
-                    close()
                 }
 
                 override fun onError(error: Int) {
@@ -91,6 +90,7 @@ class TheSpeechRecognizerImpl(private val context: Context) : TheSpeechRecognize
                     } ?: {
                         trySend(SpeechResult.Error(SpeechErrors.EMPTY_RESULT))
                     }
+                    close()
                 }
 
                 override fun onPartialResults(partialResults: Bundle?) {
