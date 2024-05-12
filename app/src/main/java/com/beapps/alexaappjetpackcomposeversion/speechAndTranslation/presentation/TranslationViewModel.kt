@@ -14,7 +14,6 @@ import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.Tran
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.Translator
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -41,7 +40,6 @@ class TranslationViewModel @Inject constructor(
         screenState = screenState.copy(
             selectedLanguage = language,
             speechRecognizerResult = "",
-            translationResult = "",
         )
         theSpeechRecognizer.setLanguage(language.tag)
     }
@@ -98,7 +96,7 @@ class TranslationViewModel @Inject constructor(
     }
 
     fun onTranslateBtnClicked() {
-        screenState = screenState.copy(translationState = TranslationState.Translating , translationResult = "")
+        screenState = screenState.copy(translationState = TranslationState.Translating)
         currentTranslationJob?.let {
             if (!it.isCancelled) it.cancel()
         }
@@ -113,12 +111,10 @@ class TranslationViewModel @Inject constructor(
                     }
 
                     is TranslateResult.Success -> {
-                        speakerManager.speak(it.translatedText).collect{result->
-                            Log.d("ab_do" , result.name)
-                        }
                         screenState.copy(
                             translationState = TranslationState.Ready,
-                            translationResult = it.translatedText
+                            speechRecognizerResult = "",
+                            translationResults = screenState.translationResults + it.translatedText
                         )
                     }
                 }
@@ -138,6 +134,13 @@ class TranslationViewModel @Inject constructor(
         screenState = screenState.copy(isRecordAudioPermGranted = granted)
     }
 
+    fun onTranslateResultItemClicked(translateResult : String) {
+        viewModelScope.launch {
+         speakerManager.speak(translateResult).collect {
+             Log.d("SpeakerManager", "speak result: $it")
+         }
+        }
+    }
 
     override fun onCleared() {
         super.onCleared()

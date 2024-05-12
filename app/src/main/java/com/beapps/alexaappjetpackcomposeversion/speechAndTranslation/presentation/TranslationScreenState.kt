@@ -6,10 +6,10 @@ import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.Supp
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.TranslationErrors
 
 data class TranslationScreenState(
+    val translationResults : List<String> = emptyList(),
     val openLanguageDialog : Boolean = false,
     val isRecordAudioPermGranted : Boolean = false,
     val speechRecognizerResult: String = "",
-    val translationResult: String = "",
     val selectedLanguage : SupportedLanguages? = null,
     val speechRecognizerState: SpeechRecognizerState = SpeechRecognizerState.Ready,
     val translationState: TranslationState = TranslationState.Ready
