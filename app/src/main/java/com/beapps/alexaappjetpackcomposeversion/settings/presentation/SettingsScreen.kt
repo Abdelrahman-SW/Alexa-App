@@ -22,14 +22,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.domin.openUrl
 import com.beapps.alexaappjetpackcomposeversion.core.domin.reviewApp
 import com.beapps.alexaappjetpackcomposeversion.core.domin.shareApp
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.settings.domain.SettingsConstant
 import com.beapps.alexaappjetpackcomposeversion.settings.domain.SettingsType
-import com.beapps.alexaappjetpackcomposeversion.settings.domain.settings
+import com.beapps.alexaappjetpackcomposeversion.settings.domain.getSettingItemsList
 import com.beapps.alexaappjetpackcomposeversion.settings.presentation.components.SettingItem
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 
@@ -38,7 +40,7 @@ import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
 fun SettingsScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-
+    val settingItems = getSettingItemsList()
     Scaffold(modifier = Modifier
         .fillMaxSize()
         .nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -46,7 +48,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        text = "Settings",
+                        text = stringResource(R.string.settings),
                         color = Color.White,
                         fontFamily = poppinsFontFamily,
                         modifier = Modifier.padding(top = 4.dp)
@@ -67,11 +69,11 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            for (setting in settings) {
+            for (setting in settingItems) {
                 SettingItem(settingItem = setting) {
                     when (it.type) {
                         SettingsType.REVIEW_APP -> context.reviewApp()
-                        SettingsType.SHARE_APP -> context.shareApp(subject = SettingsConstant.SHARE_SUBJECT_MESSAGE)
+                        SettingsType.SHARE_APP -> context.shareApp(subject = context.getString(R.string.share_app_description))
                         SettingsType.PRIVACY -> context.openUrl(SettingsConstant.PRIVACY_URL)
                         SettingsType.TERMS_OF_USE -> context.openUrl(SettingsConstant.TERMS_OF_USE_URL)
                     }

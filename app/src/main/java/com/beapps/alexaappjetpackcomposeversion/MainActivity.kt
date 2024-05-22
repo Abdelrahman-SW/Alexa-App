@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,9 +27,10 @@ import androidx.navigation.compose.rememberNavController
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.CommandsCategoryScreen
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.CommandsDetailsScreen
+import com.beapps.alexaappjetpackcomposeversion.core.domin.restartApp
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.ScreensWithBottomNavigationBar
-import com.beapps.alexaappjetpackcomposeversion.core.presentation.bottomNavigationBarItems
+import com.beapps.alexaappjetpackcomposeversion.core.presentation.getBottomNavigationBarItems
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.settings.presentation.SettingsScreen
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupSharedViewModel
@@ -45,6 +47,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val viewModel = hiltViewModel<MainViewModel>()
+            val bottomNavigationBarItems = getBottomNavigationBarItems()
+            val navController = rememberNavController()
+            val configuration = LocalConfiguration.current
+
+            LaunchedEffect(key1 = configuration) {
+                viewModel.checkIfDeviceLocalChanged(onChanged = {
+                    // don`t restart app if the user open it for the first time not from back stack
+                    if (savedInstanceState != null)
+                    restartApp()
+                })
+            }
+
             LaunchedEffect(key1 = true) {
                 viewModel.downloadAllModels()
             }
@@ -54,7 +68,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
                     val backStackEntry by navController.currentBackStackEntryAsState()
                     val commandsSharedViewModel = hiltViewModel<CommandsSharedViewModel>()
                     val setupSharedViewModel = hiltViewModel<SetupSharedViewModel>()

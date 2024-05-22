@@ -5,7 +5,7 @@ import org.intellij.lang.annotations.Language
 
 
 interface SpeakerManager {
-    fun setup(language: String = "en")
+    fun setup()
 
     fun speak(toBeSpoken: String?) : Flow<SpeakerResult>
 

@@ -17,9 +17,10 @@ import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.Supp
 fun LanguageItem(
     modifier: Modifier = Modifier,
     onItemClick: (SupportedLanguages) -> Unit,
-    language: SupportedLanguages
+    language: SupportedLanguages,
 ) {
-    Text(text = language.name,
+    Text(
+        text = language.getLanguageDisplayTitle(),
         textAlign = TextAlign.Center,
         color = Color.White,
         fontFamily = poppinsFontFamily,

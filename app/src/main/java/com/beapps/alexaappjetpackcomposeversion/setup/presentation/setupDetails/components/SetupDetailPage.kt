@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -45,11 +46,15 @@ fun SetupDetailPage(modifier: Modifier = Modifier, setupDetailItem: SetupDetailI
                 .padding(vertical = 16.dp, horizontal = 12.dp)
         ) {
             setupDetailItem.imageId?.let { id ->
-                Image(painter = painterResource(id = id), contentDescription = "image" , modifier = Modifier.fillMaxWidth().weight(2f) , contentScale = ContentScale.Fit)
+                Image(painter = painterResource(id = id), contentDescription = stringResource(R.string.image) , modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(2f) , contentScale = ContentScale.Fit)
                 Spacer(modifier = Modifier.height(16.dp))
             }
             setupDetailItem.content?.let {
-                Column(modifier = Modifier.verticalScroll(rememberScrollState()).weight(1f)) {
+                Column(modifier = Modifier
+                    .verticalScroll(rememberScrollState())
+                    .weight(1f)) {
                     Text(
                         text = it,
                         fontFamily = poppinsFontFamily,

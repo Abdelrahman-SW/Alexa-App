@@ -13,9 +13,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupItems.components.SetupHeader
@@ -36,7 +38,7 @@ fun SetupScreen(modifier: Modifier = Modifier , viewModel: SetupSharedViewModel 
             modifier = modifier.fillMaxSize(),
         ) {
             stickyHeader {
-                SetupHeader(title = "Main Setup")
+                SetupHeader(title = stringResource(R.string.main_setup))
             }
             item {
                 Spacer(modifier = Modifier.height(8.dp))
@@ -48,7 +50,7 @@ fun SetupScreen(modifier: Modifier = Modifier , viewModel: SetupSharedViewModel 
                 }
             }
             stickyHeader {
-                SetupHeader(title = "Groups")
+                SetupHeader(title = stringResource(R.string.groups))
             }
 
             item {

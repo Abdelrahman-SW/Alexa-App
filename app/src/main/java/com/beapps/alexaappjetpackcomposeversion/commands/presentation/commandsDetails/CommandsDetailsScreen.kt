@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -18,7 +17,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -27,12 +25,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.components.CommandDetailItem
 import com.beapps.alexaappjetpackcomposeversion.core.domin.shareText
@@ -65,7 +62,7 @@ fun CommandsDetailsScreen(
                     colors = TopAppBarDefaults.topAppBarColors(containerColor = mainComponentColor),
                     title = {
                         Text(
-                            text = currentCategory,
+                            text = currentCategory?.title ?: stringResource(id = R.string.none),
                             color = Color.White,
                             fontFamily = poppinsFontFamily,
                             modifier = Modifier.padding(top = 4.dp)
@@ -75,7 +72,7 @@ fun CommandsDetailsScreen(
                         IconButton(onClick = { navController.popBackStack() }) {
                             Icon(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = "back"
+                                contentDescription = stringResource(R.string.back)
                             )
                         }
                     },

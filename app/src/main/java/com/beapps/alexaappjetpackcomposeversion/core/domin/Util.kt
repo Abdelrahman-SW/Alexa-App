@@ -9,6 +9,7 @@ import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Build
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import com.beapps.alexaappjetpackcomposeversion.R
 
 const val GOOGLE_PLAY_URL_SCHEME = "market://details?id="
@@ -19,7 +20,7 @@ fun Context.shareText(text: String) {
         putExtra(Intent.EXTRA_TEXT, text)
         type = "text/plain"
     }
-    val shareIntent = Intent.createChooser(sendIntent, "Share Commands With Others !")
+    val shareIntent = Intent.createChooser(sendIntent, getString(R.string.share_commands_title))
     startActivity(shareIntent)
 }
 
@@ -40,17 +41,21 @@ fun Context.openUrl(url: String) {
 }
 
 
-fun Context.reviewApp(errorMsg: String = "unable to find market app") {
+fun Context.reviewApp(errorMsg: String = getString(R.string.unable_to_find_market_app)) {
     val uri = Uri.parse(GOOGLE_PLAY_URL_SCHEME + applicationContext.packageName)
     val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
     try {
         startActivity(myAppLinkToMarket)
     } catch (e: ActivityNotFoundException) {
-        Toast.makeText(this, errorMsg , Toast.LENGTH_LONG).show()
+        Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()
     }
 }
 
-fun Context.shareApp(type: String = "text/plain", subject: String , chooserTitle: String = "choose one") {
+fun Context.shareApp(
+    type: String = "text/plain", subject: String, chooserTitle: String = getString(
+        R.string.choose_one
+    )
+) {
     try {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = type
@@ -74,10 +79,18 @@ fun Context.isDeviceConnectedToWifi(): Boolean {
             networkCapabilities != null && networkCapabilities.hasTransport(
                 NetworkCapabilities.TRANSPORT_WIFI
             )
-        }
-        else {
+        } else {
             false
         }
     }
     return true
+}
+
+fun ComponentActivity.restartApp() {
+    val intent = Intent(applicationContext, this::class.java).apply {
+        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+    }
+    startActivity(intent)
+    finish()
+    Runtime.getRuntime().exit(0) // This ensures the app process is killed and restarted
 }

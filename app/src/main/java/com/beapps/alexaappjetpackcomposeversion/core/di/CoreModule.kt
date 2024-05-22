@@ -1,6 +1,10 @@
 package com.beapps.alexaappjetpackcomposeversion.core.di
 
 import android.content.Context
+import com.beapps.alexaappjetpackcomposeversion.core.domin.DeviceLocalProvider
+import com.beapps.alexaappjetpackcomposeversion.core.domin.DeviceLocalProviderAndroidImpl
+import com.beapps.alexaappjetpackcomposeversion.core.domin.KeyStoreManagementSharedPrefsImpl
+import com.beapps.alexaappjetpackcomposeversion.core.domin.KeysStoreManagement
 import com.beapps.alexaappjetpackcomposeversion.core.domin.SpeakerManagerImpl
 import com.beapps.alexaappjetpackcomposeversion.core.domin.SpeakerManager
 import com.beapps.alexaappjetpackcomposeversion.core.domin.TranslatorDownloader
@@ -20,8 +24,20 @@ import javax.inject.Singleton
 object CoreModule {
     @Provides
     @Singleton
-    fun provideSpeakerManager() : SpeakerManager {
-        return SpeakerManagerImpl()
+    fun provideSpeakerManager(deviceLocalProvider: DeviceLocalProvider) : SpeakerManager {
+        return SpeakerManagerImpl(deviceLocalProvider)
+    }
+
+    @Provides
+    @Singleton
+    fun provideKeyStoreManagement(@ApplicationContext context: Context) : KeysStoreManagement {
+        return KeyStoreManagementSharedPrefsImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDeviceLocalProvider(@ApplicationContext context: Context) : DeviceLocalProvider {
+        return DeviceLocalProviderAndroidImpl(context)
     }
 
 
@@ -30,5 +46,7 @@ object CoreModule {
     fun provideTranslatorManager() : TranslatorDownloader {
         return TranslatorDownloaderMlKitImpl()
     }
+
+
 
 }

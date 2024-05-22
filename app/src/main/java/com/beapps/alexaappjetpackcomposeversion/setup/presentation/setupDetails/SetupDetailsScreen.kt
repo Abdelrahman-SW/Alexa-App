@@ -27,8 +27,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.SetupSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.setup.presentation.setupDetails.components.HorizontalPageIndicator
@@ -49,7 +51,7 @@ fun SetupDetailsScreen(modifier: Modifier = Modifier, viewModel: SetupSharedView
             TopAppBar(
                 title = {
                     Text(
-                        text = selectedSetupItem?.title ?: "None",
+                        text = selectedSetupItem?.title ?: stringResource(R.string.none),
                         color = Color.White,
                         fontFamily = poppinsFontFamily,
                         modifier = Modifier.padding(top = 4.dp)
@@ -59,7 +61,7 @@ fun SetupDetailsScreen(modifier: Modifier = Modifier, viewModel: SetupSharedView
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "back"
+                            contentDescription = stringResource(R.string.back),
                         )
                     }
                 },
@@ -70,7 +72,9 @@ fun SetupDetailsScreen(modifier: Modifier = Modifier, viewModel: SetupSharedView
     )
     { padding ->
         if (viewModel.isLoading) {
-            Box(modifier = Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.Center) {
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .padding(padding), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
         } else {
@@ -79,7 +83,9 @@ fun SetupDetailsScreen(modifier: Modifier = Modifier, viewModel: SetupSharedView
                     initialPage = 0,
                     pageCount = { it.size })
                 Column(
-                    modifier = modifier.fillMaxSize().padding(padding),
+                    modifier = modifier
+                        .fillMaxSize()
+                        .padding(padding),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {

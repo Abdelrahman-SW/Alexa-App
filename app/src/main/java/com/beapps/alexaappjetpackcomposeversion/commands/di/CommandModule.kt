@@ -6,6 +6,7 @@ import androidx.room.Room
 import com.beapps.alexaappjetpackcomposeversion.commands.data.db.CommandDatabase
 import com.beapps.alexaappjetpackcomposeversion.commands.data.repo.CommandsRepoImpl
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.CommandsRepo
+import com.beapps.alexaappjetpackcomposeversion.core.domin.KeysStoreManagement
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,10 +30,16 @@ object CommandModule {
 
     @Provides
     @Singleton
-    fun provideCommandRepo(@ApplicationContext context: Context , commandDatabase: CommandDatabase): CommandsRepo {
+    fun provideCommandRepo(
+        @ApplicationContext context: Context,
+        commandDatabase: CommandDatabase,
+        keysStoreManagement: KeysStoreManagement
+    ): CommandsRepo {
         return CommandsRepoImpl(
             context,
-            commandDatabase
+            commandDatabase,
+            keysStoreManagement
         )
     }
+
 }

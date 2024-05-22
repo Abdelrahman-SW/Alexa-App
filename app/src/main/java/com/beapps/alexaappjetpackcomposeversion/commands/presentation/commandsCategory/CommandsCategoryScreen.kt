@@ -1,5 +1,7 @@
 package com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory
 
+import android.content.Context
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +32,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -38,13 +41,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.CommandsSharedViewModel
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsCategory.components.CommandCategoryItem
 import com.beapps.alexaappjetpackcomposeversion.commands.presentation.commandsDetails.CommandsDetailsScreen
+
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.Screen
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
@@ -63,6 +71,9 @@ fun CommandsCategoryScreen(
     val isSearchBarActive = commandsSharedViewModel.isSearchBarActive
     val searchHistory = commandsSharedViewModel.searchHistory
 
+//    LaunchedEffect(key1 = true) {
+//        commandsSharedViewModel.retrieveCommandCategories()
+//    }
 
     val searchBarTrailingIcon: ImageVector? = remember(searchQuery, isSearchBarActive) {
         if (isSearchBarActive && searchQuery.isBlank()) {
@@ -93,20 +104,20 @@ fun CommandsCategoryScreen(
                             RoundedCornerShape(bottomEnd = 32.dp, bottomStart = 32.dp)
                         )
                         .background(mainComponentColor)
-                        .padding(top = 24.dp, start = 16.dp, end = 16.dp, bottom = 38.dp)
+                        .padding(top = 32.dp, start = 16.dp, end = 16.dp, bottom = 38.dp)
 
                 ) {
                     Text(
-                        modifier = Modifier.padding(start = 4.dp),
-                        text = "Welcome To Alexa",
+                        modifier = Modifier.padding(start = 12.dp),
+                        text = stringResource(R.string.welcome_msg_header),
                         fontSize = 22.sp,
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold
                     )
 
                     Text(
-                        modifier = Modifier.padding(start = 4.dp),
-                        text = "Explore Commands make it easy Now .. !",
+                        modifier = Modifier.padding(start = 12.dp),
+                        text = stringResource(R.string.welcome_msg_description),
                         fontSize = 12.sp,
                         fontFamily = poppinsFontFamily,
                     )
@@ -127,17 +138,20 @@ fun CommandsCategoryScreen(
                         onActiveChange = { commandsSharedViewModel.onActiveChanged(it) },
                         placeholder = {
                             Text(
-                                text = "Search For Commands .. ", fontFamily = poppinsFontFamily
+                                text = stringResource(R.string.search_hint), fontFamily = poppinsFontFamily
                                 , fontSize = 14.sp
                             )
                         },
                         leadingIcon = {
-                            Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
+                            Icon(imageVector = Icons.Default.Search, contentDescription = stringResource(
+                                R.string.search
+                            )
+                            )
                         },
                         trailingIcon = {
                             searchBarTrailingIcon?.let {
                                 Icon(imageVector = it,
-                                    contentDescription = "searchBarTrailingIcon",
+                                    contentDescription = stringResource(R.string.searchbartrailingicon),
                                     modifier = Modifier.clickable {
                                         commandsSharedViewModel.onSearchTrailingIconClicked()
                                     })
@@ -161,7 +175,7 @@ fun CommandsCategoryScreen(
                                     Icon(
                                         modifier = Modifier.padding(end = 16.dp),
                                         imageVector = Icons.Default.History,
-                                        contentDescription = "History"
+                                        contentDescription = stringResource(R.string.history)
                                     )
                                     Text(text = search, fontFamily = poppinsFontFamily)
                                 }
@@ -176,7 +190,9 @@ fun CommandsCategoryScreen(
 
                 Text(
                     modifier = Modifier.padding(start = 24.dp),
-                    text = if (isSearchingActive) "Results :" else "Categories",
+                    text = if (isSearchingActive) stringResource(R.string.results) else stringResource(
+                        R.string.categories
+                    ),
                     fontSize = 19.sp,
                     fontFamily = poppinsFontFamily,
                     fontWeight = FontWeight.Bold
@@ -197,8 +213,8 @@ fun CommandsCategoryScreen(
                     ) {
                         items(commandCategories) { category ->
                             CommandCategoryItem(item = category) {
+                                commandsSharedViewModel.onSelectedCategory(category)
                                 navController.navigate(Screen.CommandsDetailsScreen.route)
-                                commandsSharedViewModel.onSelectedCategory(it.title)
                             }
                         }
                     }

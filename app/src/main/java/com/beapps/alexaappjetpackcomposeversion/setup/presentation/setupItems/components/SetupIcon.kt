@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.randomColor
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.randomGradientColors
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupItem
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.getDrawableIdFromSetupTitle
 
 @Composable
 fun SetupIcon(modifier: Modifier = Modifier, item: SetupItem) {
@@ -36,7 +37,7 @@ fun SetupIcon(modifier: Modifier = Modifier, item: SetupItem) {
     )
     {
         Icon(
-            painter = painterResource(id = item.iconId),
+            painter = painterResource(id = item.title.getDrawableIdFromSetupTitle()),
             contentDescription = item.title,
             modifier = modifier.size(16.dp),
             tint = Color.White

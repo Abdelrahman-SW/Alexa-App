@@ -1,6 +1,8 @@
 package com.beapps.alexaappjetpackcomposeversion.core.presentation
 
 import android.content.Context
+import android.content.Intent
+import androidx.activity.ComponentActivity
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily

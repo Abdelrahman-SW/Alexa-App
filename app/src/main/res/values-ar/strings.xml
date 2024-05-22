@@ -1,17 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">AlexaApp(JetpackComposeVersion) </string>
-    <!-- critical to take care of these value , it should be same as the name of the asset folders for each language-->
-    <string name="commands_path">commands.json</string>
-    <string name="setup_path">setup.json</string>
 
+    <!-- critical to take care of these value , it should be same as the name of the asset folders for each language-->
+    <string name="commands_path">commands_ar.json</string>
+    <string name="setup_path">setup_ar.json</string>
     <!-- critical to take care of these value , it should be same as the titles in asset folder in all languages-->
     <!-- categories Titles -->
-    <string name="favourite">Favourite</string>
-    <string name="echo">Echo</string>
+    <string name="favourite">المفضلة</string>
+    <string name="echo">الإيكو</string>
     <!--..-->
     <!--..-->
     <!-- setup Titles -->
-    <string name="basic">Basic</string>
+    <string name="basic">أساسيات</string>
     <!-- .. -->
     <!-- .. -->
     <!-- continue all title for commands and setup and add them in the code to check for suitable icons-->
@@ -19,9 +19,9 @@
 
     <!-- critical to take care of the order of these values , it should be same as the order of supported languages-->
     <string-array name="languages">
-        <item>ENGLISH</item>
-        <item>ARABIC</item>
-        <item>FRENCH</item>
+        <item>الإنجليزية</item>
+        <item>العربية</item>
+        <item>الفرنسية</item>
         <item>GERMAN</item>
         <item>INDONESIAN</item>
         <item>JAPANESE</item>
@@ -32,36 +32,36 @@
     </string-array>
 
     <!-- Feel free to change these values as u need with no worries -->
-    <string name="welcome_msg_header">Welcome To Alexa</string>
-    <string name="welcome_msg_description">Explore Commands make it easy Now .. !</string>
-    <string name="search_hint">"Search For Commands .. "</string>
-    <string name="search">Search</string>
+    <string name="welcome_msg_header">مرحبا بك</string>
+    <string name="welcome_msg_description">أستكشف جميع الأوامر .. الأمر أصبح أسهل الأن</string>
+    <string name="search_hint">البحث عن الأوامر</string>
+    <string name="search">بحث</string>
     <string name="searchbartrailingicon">searchBarTrailingIcon</string>
     <string name="history">History</string>
-    <string name="results">Results :</string>
-    <string name="categories">Categories</string>
+    <string name="results">النتيجة :</string>
+    <string name="categories">الأقسام</string>
     <string name="share">Share</string>
     <string name="back">back</string>
     <string name="share_commands_title">Share Commands With Others !</string>
     <string name="unable_to_find_market_app">unable to find market app</string>
     <string name="choose_one">choose one</string>
-    <string name="commands">Commands</string>
-    <string name="setup">Setup</string>
-    <string name="translation">Translation</string>
-    <string name="settings">Settings</string>
-    <string name="review_app">Review App</string>
-    <string name="share_app">Share App</string>
-    <string name="privacy">Privacy</string>
-    <string name="terms_of_use">Terms of Use</string>
+    <string name="commands">الأوامر</string>
+    <string name="setup">التطبيق</string>
+    <string name="translation">الترجمة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="review_app">تقييم التطبيق</string>
+    <string name="share_app">مشاركة التطبيق</string>
+    <string name="privacy">الخصوصية</string>
+    <string name="terms_of_use">تعليمات الإستخدام</string>
     <string name="share_app_description">\n Let me recommend you this application\n\nhttps://play.google.com/store/apps/details?id=</string>
     <string name="image">image</string>
     <string name="none">None</string>
     <string name="click">click</string>
-    <string name="main_setup">Main Setup</string>
-    <string name="groups">Groups</string>
-    <string name="select_language">Select Language</string>
-    <string name="listening">Listening . . .</string>
-    <string name="tap_on_mic_and_start_speaking">"Tap On Mic And Start Speaking .. "</string>
+    <string name="main_setup">التطبيق الأساسي</string>
+    <string name="groups">المجموعات</string>
+    <string name="select_language">أختر اللغة</string>
+    <string name="listening">يتم الإستماع الأن . . .</string>
+    <string name="tap_on_mic_and_start_speaking">"أضغط علي الميكرفون ثم أبدا في التحدث"</string>
     <string name="please_select_language_first">Please Select Language First</string>
     <string name="record">Record</string>
     <string name="please_speak_first">Please Speak First</string>
@@ -69,9 +69,8 @@
     <string name="please_wait_the_model_is_downloading">Please Wait The Model Is Downloading</string>
     <string name="model_not_downloaded_please_connect_to_wifi_to_continue_downloading">Model Not Downloaded, Please Connect to Wifi To Continue Downloading</string>
     <string name="undefined_error">Undefined Error</string>
-    <string name="translating">Translating ...</string>
-    <string name="translation_results">Translation Results :</string>
+    <string name="translating">يتم الترجمة ...</string>
+    <string name="translation_results">نتيجة الترجمة :</string>
 
 
 </resources>
-

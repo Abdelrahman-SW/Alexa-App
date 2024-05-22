@@ -1,6 +1,6 @@
 [
     {
-        "title": "Favourite",
+        "title": "المفضلة",
         "content": [
             {
                 "tag_line": "Favourite",
@@ -13,13 +13,13 @@
             }
         ]
     },{
-        "title": "Basic",
+        "title": "أساسيات",
         "content": [
             {
                 "tag_line": "Basic",
                 "details": [
                     {
-                        "name":"Alexa, help.",
+                        "name":"هل يمكنك مساعدتي أليكسا ؟",
                         "isFavorite":false
                     },
                     {
@@ -95,7 +95,7 @@
         ]
     },
     {
-        "title": "Calls & SMS",
+        "title": "المكالمات ورسائل",
         "content": [
             {
                 "tag_line": "Calls & Messages",
@@ -174,7 +174,7 @@
     },
     
     {
-        "title": "Music",
+        "title": "الموسيقي",
         "content": [
             {
                 "tag_line": "Musica",
@@ -368,7 +368,7 @@
         ]
     },
     {
-        "title": "Weather",
+        "title": "الطقس",
         "content": [
             {
                 "tag_line": "title",
@@ -418,7 +418,7 @@
         ]
     },
     {
-        "title": "News",
+        "title": "الإخبار",
         "content": [
             {
                 "tag_line": "News",
@@ -452,7 +452,7 @@
         ]
     },
     {
-        "title": "Donation",
+        "title": "التبرع",
         "content": [
             {
                 "tag_line": "Make a donation",
@@ -475,7 +475,7 @@
     },
     
     {
-        "title": "Search",
+        "title": "البحث",
         "content": [
             {
                 "tag_line": "Search",
@@ -578,7 +578,7 @@
     },
     
     {
-        "title": "Funny",
+        "title": "التسلية",
         "content": [
             {
                 "tag_line": "Funny",
@@ -882,7 +882,7 @@
     },
     
     {
-        "title": "Alarms & Timers",
+        "title": "المؤقت والمنبه",
         "content": [
             {
                 "tag_line": "Alarms & Timers",
@@ -988,7 +988,7 @@
         ]
     },
     {
-        "title": "Calendar",
+        "title": "التقويم",
         "content": [
             {
                 "tag_line": "calendar and date for alexa",
@@ -1062,7 +1062,7 @@
         ]
     },
     {
-        "title": "Entertainment",
+        "title": "الترفيه",
         "content": [
             {
                 "tag_line": "Entertainment movied radio and tv",
@@ -1213,7 +1213,7 @@
     },
     
     {
-        "title": "Bluetooth",
+        "title": "البلوتوث",
         "content": [
             {
                 "tag_line": "titles",
@@ -1261,7 +1261,7 @@
     
     
     {
-        "title": "Shopping",
+        "title": "التسوق",
         "content": [
             {
                 "tag_line": "shopping from amazon",
@@ -1353,7 +1353,7 @@
     
     
     {
-        "title": "Sports",
+        "title": "الرياضة",
         "content": [
             {
                 "tag_line": "sports commands",
@@ -1440,7 +1440,7 @@
     },
     
     {
-        "title": "Notifications",
+        "title": "الإشعارات",
         "content": [
             {
                 "tag_line": "Notifications and alerts",

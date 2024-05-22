@@ -17,8 +17,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.TranslateResult
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.lightBlue100
@@ -47,7 +49,7 @@ fun TranslationResultItem(modifier: Modifier = Modifier , translateResult: Strin
 
         Icon(
             imageVector = Icons.Default.Share,
-            contentDescription = "Share",
+            contentDescription = stringResource(id = R.string.share),
             modifier
                 .clickable {
                     onShareClick(translateResult)

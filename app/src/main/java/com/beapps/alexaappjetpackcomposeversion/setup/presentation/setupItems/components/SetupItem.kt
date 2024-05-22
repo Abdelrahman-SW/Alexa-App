@@ -17,8 +17,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.randomGradientColors
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupItem
@@ -49,7 +51,7 @@ fun SetupItem(modifier: Modifier = Modifier, item: SetupItem, onItemClicked: (Se
 
         Icon(
             imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-            contentDescription = "click",
+            contentDescription = stringResource(R.string.click),
             modifier
                 .padding(horizontal = 4.dp),
             tint = lightBlue100

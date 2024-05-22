@@ -1,10 +1,11 @@
 package com.beapps.alexaappjetpackcomposeversion.setup.data
 
 import android.content.Context
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.data.loadJSONData
 import com.beapps.alexaappjetpackcomposeversion.core.domin.getDrawableIdFromImageName
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.SetupRepo
-import com.beapps.alexaappjetpackcomposeversion.setup.domain.getDrawableIdFromSetupTitle
+import com.beapps.alexaappjetpackcomposeversion.setup.presentation.getDrawableIdFromSetupTitle
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupDetailItem
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupItem
 import com.beapps.alexaappjetpackcomposeversion.setup.domain.models.SetupType
@@ -13,7 +14,7 @@ import org.json.JSONObject
 
 class SetupRepoImpl(val context: Context) : SetupRepo {
 
-    private val jsonStr by lazy { loadJSONData(context, "setup.json") }
+    private var jsonStr = loadJSONData(context, context.getString(R.string.setup_path))
     override fun getSetupData(): List<SetupItem> {
         jsonStr?.let { jsonStr ->
             val jsonObject = JSONObject(jsonStr)
@@ -27,7 +28,6 @@ class SetupRepoImpl(val context: Context) : SetupRepo {
                 setupItems.add(
                     SetupItem(
                         title = title,
-                        iconId = title.getDrawableIdFromSetupTitle(),
                         type = SetupType.GROUPS
                     )
                 )
@@ -39,7 +39,6 @@ class SetupRepoImpl(val context: Context) : SetupRepo {
                 setupItems.add(
                     SetupItem(
                         title = title,
-                        iconId = title.getDrawableIdFromSetupTitle(),
                         type = SetupType.MAIN_SETUP
                     )
                 )

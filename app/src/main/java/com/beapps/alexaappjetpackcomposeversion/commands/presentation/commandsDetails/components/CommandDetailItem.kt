@@ -22,8 +22,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.commands.domain.models.CommandDetails
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.lightBlue100
@@ -61,7 +63,7 @@ fun CommandDetailItem(
 
         Icon(
             imageVector = if (isFavourite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
-            contentDescription = "Favourite",
+            contentDescription = stringResource(R.string.favourite),
             modifier
                 .clickable {
                     isFavourite = !isFavourite
@@ -73,7 +75,7 @@ fun CommandDetailItem(
 
         Icon(
             imageVector = Icons.Default.Share,
-            contentDescription = "Share",
+            contentDescription = stringResource(R.string.share),
             modifier
                 .clickable {
                     onShareClick(item)

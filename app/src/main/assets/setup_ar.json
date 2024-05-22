@@ -1,0 +1,474 @@
+{
+  "mainsetup": [
+    {
+      "title": "الإيكو",
+      "groupsSetup": [
+        {
+          "image": "",
+          "text": "اللّغة العربيّة من اللّغات العالميّة الأكثر انتشاراً في العالم، وتعتبرُ من إحدى اللّغات المُعتمدة في الأمم المُتّحدة، كما إنها تشكّلُ اللّغة الأولى في مناطق بلاد الشّام، وشبه الجزيرة العربيّة، وشمال أفريقيا، وساهم هذا الانتشار الواسعُ للّغة العربيّة في تصنيفها كواحدةٍ من اللّغاتِ التي يسعى العديدُ من الطُلّاب إلى دراستها، وخصوصاً غير الناطقيّن بها؛ من أجل التعرّفِ على جمال كلماتها. كما أنّها من اللّغات التي ظلّت مُحافظةً على قواعدها اللغويّة حتّى هذا الوقت؛ لأنّها لغة الإسلام والمسلميّن والقرآنِ الكريم، كما أنّ الثّقافة العربيّة غنيّةٌ جدّاً بالعديد من المُؤلّفات، سواءً الأدبيّة، أو العلميّة، أو غيرها، والتي كُتِبتْ بِلُغَةٍ عربيّة فصيحة، ويصلُ العدد الإجماليُّ لحُروفِ اللّغة العربيّة إلى ثمانيّة وعشرين حرفاً"
+        },
+        {
+          "image": "",
+          "text": "The app is generally available for both iOS and Android devices.\n\n1.App Store (iOS) or Google Play Store (Android):\n\n-For iOS devices (iPhone or iPad), open the App Store.\n-For Android devices, open the Google Play Store.\n\n2.Search for \"Amazon Alexa\":\n\n-In the search bar of the respective store, type \"Amazon Alexa\" and press enter.\n\n3.Select the Official App:\n\n-Look for the official Amazon Alexa app in the search results.\n-Make sure it's developed by Amazon Mobile LLC.\n\n4.Download and Install:\n\n-Tap on the app icon.\n-On the app page, tap the \"Download\" or \"Install\" button."
+        },
+        {
+          "image": "echo_1",
+          "text": "Open the official Amazon Alexa App. and Sign in with your amazon account.\n\nIf you don't have one, you'll need to create a new accountttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt."
+        },
+        {
+          "image": "echo_5",
+          "text": "Unpack and Connect:\n\n- Unbox your Amazon Echo device.\n- Connect the device to a power source using the provided power adapter.\n- Switch on your Amazon Echo device. Wait for it to power up and show the appropriate indicator lights."
+        },
+        {
+          "image": "echo_preconfig",
+          "text": "{Switch to your phone , Note: In case you possess an existing Amazon account and acquired your device through Amazon, it could be pre-configured. If a pop-up message appears upon connecting your device, simply tap \"Continue\" to proceed to next steps.  },"
+        },
+        {
+          "image": "echo_4",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_5",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_6",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_7",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_8",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_9",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "echo_10",
+          "text": "Add the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    },
+    {
+      "title": "Echo Dot",
+      "groupsSetup": [
+        {
+          "text": "Open the official Amazon Alexa App. Sign in with your amazon account. "
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    },
+    {
+      "title": "Echo Plus",
+      "groupsSetup": [
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    },
+    {
+      "title": "Tab",
+      "groupsSetup": [
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "title": "Music Account",
+      "groupsSetup": [
+        {
+          "text": "Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account. Open the official Amazon Alexa App. Sign in with your amazon account."
+        },
+        {
+          "image": "Echo2",
+          "text": "Follow the instractions to complete the app pre-setup. For faster setup, tap \"SKip\" at the setup you feel is unnecessary."
+        },
+        {
+          "image": "Echo3",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "Echo4",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "groupsSetup": [
+        {
+          "image": "Music Account1",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "Music Account2",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "Music Account3",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        },
+        {
+          "image": "Music Account4",
+          "text": "Select the device's type you want to setup. In my case it was the Amazon Echo"
+        }
+      ]
+    },
+    {
+      "title": "Create Routine",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Shopping List",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Ring Device",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "IRobot Device",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skype",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Smart Home",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skill Blueprints",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Music",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Music Account",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Create Routine",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Shopping List",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Ring Device",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "IRobot Device",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skype",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Smart Home",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    },
+    {
+      "title": "Skill Blueprints",
+      "groupsSetup": [
+        {
+          "image": "Music Account1"
+        },
+        {
+          "image": "Music Account2"
+        },
+        {
+          "image": "Music Account3"
+        },
+        {
+          "image": "Music Account4"
+        }
+      ]
+    }
+  ]
+}

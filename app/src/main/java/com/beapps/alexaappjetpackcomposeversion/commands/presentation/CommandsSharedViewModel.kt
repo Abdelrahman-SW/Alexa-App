@@ -43,14 +43,11 @@ class CommandsSharedViewModel @Inject constructor(
     var searchHistory = mutableStateListOf<String>()
         private set
 
-    var currentCategory = MutableStateFlow("")
+    var currentCategory = MutableStateFlow<CommandCategory?>(null)
+
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val commandDetails = currentCategory.flatMapLatest {
-        if(it == "Favorite") {
-            commandsRepo.getAllFavouriteCommands()
-        }
-        else
         commandsRepo.getAllCommandsForSpecificCategory(it)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), listOf())
 
@@ -68,17 +65,12 @@ class CommandsSharedViewModel @Inject constructor(
 
     init {
         speakerManager.setup()
-        viewModelScope.launch {
-            isLoading = true
-            commandCategories = commandsRepo.getAllCommandsCategories()
-            if (!commandsRepo.isCommandsSavedInDb()) {
-                commandsRepo.extractAndSaveAllCommandsInDb()
-            }
-            isLoading = false
-        }
+        retrieveCommandCategories()
     }
 
-    fun onSelectedCategory(category: String) {
+
+
+    fun onSelectedCategory(category: CommandCategory) {
         currentCategory.value = category
     }
 
@@ -127,5 +119,13 @@ class CommandsSharedViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         speakerManager.pause()
+    }
+
+    private fun retrieveCommandCategories() {
+        viewModelScope.launch {
+            isLoading = true
+            commandCategories = commandsRepo.getAllCommandsCategories()
+            isLoading = false
+        }
     }
 }

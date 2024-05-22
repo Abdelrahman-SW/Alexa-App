@@ -113,7 +113,6 @@ class TheSpeechRecognizerImpl(private val context: Context) : TheSpeechRecognize
 
             awaitClose {
                 // If the flow is cancelled, cancel the speech
-                Log.d("ab_do", "flow is cancelled")
             }
         }
     }

@@ -5,7 +5,11 @@ import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Reviews
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.VerifiedUser
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
+import com.beapps.alexaappjetpackcomposeversion.R
 
 enum class SettingsType {
     REVIEW_APP,
@@ -19,26 +23,29 @@ data class SettingItem(
     val type: SettingsType
 )
 
-val settings = listOf(
-    SettingItem(
-        title = "Review App",
-        icon = Icons.Default.Reviews,
-        type = SettingsType.REVIEW_APP
+@Composable
+fun getSettingItemsList(): List<SettingItem> {
+    return listOf(
+        SettingItem(
+            title = stringResource(R.string.review_app),
+            icon = Icons.Default.Reviews,
+            type = SettingsType.REVIEW_APP
 
-    ),
-    SettingItem(
-        title = "Share App",
-        icon = Icons.Default.Share,
-        type = SettingsType.SHARE_APP
-    ),
-    SettingItem(
-        title = "Privacy",
-        icon = Icons.Default.PrivacyTip,
-        type = SettingsType.PRIVACY
-    ),
-    SettingItem(
-        title = "Terms of Use",
-        icon = Icons.Default.VerifiedUser,
-        type = SettingsType.TERMS_OF_USE
+        ),
+        SettingItem(
+            title = stringResource(R.string.share_app),
+            icon = Icons.Default.Share,
+            type = SettingsType.SHARE_APP
+        ),
+        SettingItem(
+            title = stringResource(R.string.privacy),
+            icon = Icons.Default.PrivacyTip,
+            type = SettingsType.PRIVACY
+        ),
+        SettingItem(
+            title = stringResource(R.string.terms_of_use),
+            icon = Icons.Default.VerifiedUser,
+            type = SettingsType.TERMS_OF_USE
+        )
     )
-)
+}

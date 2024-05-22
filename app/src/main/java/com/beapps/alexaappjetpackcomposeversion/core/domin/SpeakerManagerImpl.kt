@@ -1,8 +1,6 @@
 package com.beapps.alexaappjetpackcomposeversion.core.domin
 
-import android.util.Log
-import com.beapps.alexaappjetpackcomposeversion.core.domin.SpeakerManager
-import com.beapps.alexaappjetpackcomposeversion.core.domin.SpeakerResult
+import android.content.Context
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -10,17 +8,20 @@ import net.gotev.speech.Speech
 import net.gotev.speech.TextToSpeechCallback
 import java.util.Locale
 
-class SpeakerManagerImpl : SpeakerManager {
+class SpeakerManagerImpl(
+    private val deviceLocalProvider: DeviceLocalProvider
+) : SpeakerManager {
 
-    override fun setup(language: String) {
-        Speech.getInstance().setLocale(Locale(language)).say("")
+    override fun setup() {
+        val tag = deviceLocalProvider.getCurrentDeviceLocalTag()
+        Speech.getInstance().setLocale(Locale(tag)).say("")
     }
 
     override fun speak(toBeSpoken: String?): Flow<SpeakerResult> {
-        return callbackFlow  {
+        return callbackFlow {
             Speech.getInstance().say(toBeSpoken, object : TextToSpeechCallback {
                 override fun onStart() {
-                   trySend(SpeakerResult.ON_START)
+                    trySend(SpeakerResult.ON_START)
                 }
 
                 override fun onCompleted() {
@@ -37,7 +38,6 @@ class SpeakerManagerImpl : SpeakerManager {
 
             awaitClose {
                 // If the flow is cancelled, cancel the speech
-                Log.d("ab_do", "flow is cancelled")
                 pause()
             }
         }

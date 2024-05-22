@@ -9,6 +9,8 @@ android {
     namespace = "com.beapps.alexaappjetpackcomposeversion"
     compileSdk = 34
 
+
+
     defaultConfig {
         applicationId = "com.beapps.alexaappjetpackcomposeversion"
         minSdk = 21
@@ -19,6 +21,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        ndk {
+            abiFilters.addAll(listOf("armeabi" , "armeabi-v7a", "arm64-v8a"))
         }
     }
 
@@ -65,21 +71,21 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation (libs.androidx.material.icons.extended)
+    implementation(libs.androidx.material.icons.extended)
     // navigation-compose :
-    implementation (libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
     // dagger-hilt :
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
     // gson
-    implementation (libs.gson)
+    implementation(libs.gson)
     // Room
-    implementation (libs.androidx.room.runtime)
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    kapt (libs.androidx.room.compiler)
+    kapt(libs.androidx.room.compiler)
     // speech
-    implementation (libs.speech)
+    implementation(libs.speech)
     // Translate
     implementation(libs.translate)
 

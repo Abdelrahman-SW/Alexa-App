@@ -1,7 +1,6 @@
 package com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.presentation
 
 import android.Manifest
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -41,15 +40,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.beapps.alexaappjetpackcomposeversion.R
 import com.beapps.alexaappjetpackcomposeversion.core.domin.isDeviceConnectedToWifi
 import com.beapps.alexaappjetpackcomposeversion.core.domin.shareText
 import com.beapps.alexaappjetpackcomposeversion.core.presentation.poppinsFontFamily
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.TranslationErrors
-import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.languages
+import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.domain.supportedLanguagesList
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.presentation.components.LanguageDialog
 import com.beapps.alexaappjetpackcomposeversion.speechAndTranslation.presentation.components.TranslationResultItem
 import com.beapps.alexaappjetpackcomposeversion.ui.theme.mainComponentColor
@@ -85,7 +86,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        text = "Translation",
+                        text = stringResource(id = R.string.translation),
                         color = Color.White,
                         fontFamily = poppinsFontFamily,
                         modifier = Modifier.padding(top = 4.dp)
@@ -116,7 +117,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                                 !is SpeechRecognizerState.Listening
                     ) {
                         Text(
-                            text = screenState.selectedLanguage?.name ?: "Select Language",
+                            text = screenState.selectedLanguage?.getLanguageDisplayTitle() ?: stringResource(R.string.select_language),
                             fontFamily = poppinsFontFamily
                         )
                     }
@@ -126,8 +127,8 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                     Text(
                         text = when (val state = screenState.speechRecognizerState) {
                             is SpeechRecognizerState.Error -> state.error.name
-                            SpeechRecognizerState.Listening -> "Listening . . ."
-                            SpeechRecognizerState.Ready -> "Tap On Mic And Start Speaking .. "
+                            SpeechRecognizerState.Listening -> stringResource(R.string.listening)
+                            SpeechRecognizerState.Ready -> stringResource(R.string.tap_on_mic_and_start_speaking)
                         },
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center,
@@ -168,7 +169,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                                         Toast
                                             .makeText(
                                                 context,
-                                                "Please Select Language First",
+                                                context.getString(R.string.please_select_language_first),
                                                 Toast.LENGTH_SHORT
                                             )
                                             .show()
@@ -183,7 +184,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                                     is SpeechRecognizerState.Error -> Icons.Default.Mic
                                     SpeechRecognizerState.Listening -> Icons.Default.StopCircle
                                     SpeechRecognizerState.Ready -> Icons.Default.Mic
-                                }, contentDescription = "Record",
+                                }, contentDescription = stringResource(R.string.record),
                                 Modifier.size(32.dp)
                             )
                         }
@@ -195,7 +196,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                                 } else {
                                     Toast.makeText(
                                         context,
-                                        "Please Speak First",
+                                        context.getString(R.string.please_speak_first),
                                         Toast.LENGTH_SHORT
                                     )
                                         .show()
@@ -203,7 +204,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                             }, enabled = screenState.speechRecognizerState
                                     !is SpeechRecognizerState.Listening
                         ) {
-                            Text(text = "Translate", fontFamily = poppinsFontFamily)
+                            Text(text = stringResource(id = R.string.translation), fontFamily = poppinsFontFamily)
                         }
                     }
 
@@ -220,20 +221,20 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
                     textAlign = TextAlign.Center,
                     text = when (val state = screenState.translationState) {
                         is TranslationState.Error -> when (state.error) {
-                            TranslationErrors.EmptyResult -> "Empty Result"
+                            TranslationErrors.EmptyResult -> stringResource(R.string.empty_result)
                             TranslationErrors.ModelNotFound -> {
                                 if (context.isDeviceConnectedToWifi()) {
-                                    "Please Wait The Model Is Downloading"
+                                    stringResource(R.string.please_wait_the_model_is_downloading)
                                 } else {
-                                    "Model Not Downloaded, Please Connect to Wifi To Continue Downloading"
+                                    stringResource(R.string.model_not_downloaded_please_connect_to_wifi_to_continue_downloading)
                                 }
                             }
 
-                            is TranslationErrors.Others -> state.error.e.message ?: "Undefined Error"
+                            is TranslationErrors.Others -> state.error.e.message ?: stringResource(R.string.undefined_error)
                         }
 
                         TranslationState.Ready -> ""
-                        TranslationState.Translating -> "Translating ..."
+                        TranslationState.Translating -> stringResource(R.string.translating)
                     },
                     fontSize = 14.sp,
                     fontFamily = poppinsFontFamily
@@ -245,7 +246,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
 
             Text(
                 modifier = Modifier.padding(start = 4.dp),
-                text = "Translation Results :",
+                text = stringResource(R.string.translation_results),
                 fontSize = 18.sp,
                 fontFamily = poppinsFontFamily
             )
@@ -273,7 +274,7 @@ fun TranslationScreen(modifier: Modifier = Modifier) {
 
         if (screenState.openLanguageDialog) {
             LanguageDialog(
-                languages = languages,
+                languages = supportedLanguagesList,
                 onItemClick = {
                     translationViewModel.onSelectedLanguage(it)
                     translationViewModel.onLanguageDialogDismiss()
