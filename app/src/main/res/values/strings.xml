@@ -7,11 +7,12 @@
     <!-- critical to take care of these value , it should be same as the titles in asset folder in all languages-->
     <!-- categories Titles -->
     <string name="favourite">Favourite</string>
-    <string name="echo">Echo</string>
+    <string name="basic">Basic</string>
     <!--..-->
     <!--..-->
     <!-- setup Titles -->
-    <string name="basic">Basic</string>
+    <string name="echo">Echo</string>
+
     <!-- .. -->
     <!-- .. -->
     <!-- continue all title for commands and setup and add them in the code to check for suitable icons-->

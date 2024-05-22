@@ -7,11 +7,11 @@
     <!-- critical to take care of these value , it should be same as the titles in asset folder in all languages-->
     <!-- categories Titles -->
     <string name="favourite">المفضلة</string>
-    <string name="echo">الإيكو</string>
+    <string name="basic">أساسيات</string>
     <!--..-->
     <!--..-->
     <!-- setup Titles -->
-    <string name="basic">أساسيات</string>
+    <string name="echo">الإيكو</string>
     <!-- .. -->
     <!-- .. -->
     <!-- continue all title for commands and setup and add them in the code to check for suitable icons-->
