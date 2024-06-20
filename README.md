@@ -22,6 +22,8 @@ The App Code Is Developed in Clean Arch Way that let the code fit well and be sc
 
 -- Google Translate ML-Kit : For Translation Process
 
+-- dagger-hilt (for dependency Injection) 
+
 -- coroutines , flows , viewModel , room db , version Cataloges and more ..
 
 
